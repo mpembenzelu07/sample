@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Thank You | CAVITRD – Grateful for Your Support</title>
+    <meta name="description" content="Thank you for reaching out to CAVITRD. Your message, donation, or partnership request has been received. Together we transform lives.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0f3b2c;
+            --primary-dark: #0a2a1f;
+            --primary-light: #2a9d6e;
+            --secondary: #e9b35f;
+            --secondary-dark: #d49a3a;
+            --light-bg: #fefcf5;
+            --white: #ffffff;
+            --dark: #1e2a2e;
+            --shadow-xl: 0 35px 50px -20px rgba(0, 0, 0, 0.2);
+            --radius-xl: 2rem;
+            --transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #fefcf5 0%, #f7f3ea 100%);
+            color: var(--dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .thankyou-card {
+            max-width: 700px;
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 3rem 2rem;
+            box-shadow: var(--shadow-xl);
+            transition: var(--transition);
+            margin: 1rem;
+        }
+
+        .thankyou-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-circle {
+            width: 100px;
+            height: 100px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 3rem;
+            color: white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .message {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .sub-message {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: var(--transition);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--dark);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .btn-primary:hover {
+            background: #f0b551;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .lang-group {
+            display: flex;
+            gap: 0.5rem;
+            background: #eef3f0;
+            padding: 0.3rem;
+            border-radius: 3rem;
+            margin: 2rem auto 0;
+            width: fit-content;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.8rem;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 42px;
+            height: 42px;
+            background: rgba(15, 59, 44, 0.1);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        footer {
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 640px) {
+            h1 { font-size: 2rem; }
+            .thankyou-card { padding: 2rem 1.5rem; }
+            .btn-group { flex-direction: column; align-items: center; }
+            .btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="thankyou-card" id="thankyouCard">
+    <div class="icon-circle">
+        <i class="fas fa-heart"></i>
+    </div>
+    <h1 id="mainTitle">Thank You!</h1>
+    <div class="message" id="mainMessage">Your message has been received with gratitude.</div>
+    <div class="sub-message" id="subMessage">A member of our team will get back to you soon. Your compassion fuels our mission — together we bring healing and happiness to the Lake Zone.</div>
+    
+    <div class="btn-group">
+        <a href="index.html" class="btn btn-primary" id="homeBtn"><i class="fas fa-home"></i> <span>Back to Home</span></a>
+        <a href="get-involved.html" class="btn btn-outline" id="involvedBtn"><i class="fas fa-hand-holding-heart"></i> <span>Get Involved</span></a>
+    </div>
+
+    <div class="lang-group">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="sw">SW</button>
+    </div>
+
+    <div class="social-links">
+        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+</div>
+
+<footer>
+    <p id="footerText">CAVITRD — Registration No. 14NGO/R/4896 | Compassion in action</p>
+</footer>
+
+<script>
+    // Translations for Thank You page
+    const translations = {
+        en: {
+            mainTitle: "Thank You!",
+            mainMessage: "Your message has been received with gratitude.",
+            subMessage: "A member of our team will get back to you soon. Your compassion fuels our mission — together we bring healing and happiness to the Lake Zone.",
+            homeBtnText: "Back to Home",
+            involvedBtnText: "Get Involved",
+            footerText: "CAVITRD — Registration No. 14NGO/R/4896 | Compassion in action"
+        },
+        sw: {
+            mainTitle: "Asante Sana!",
+            mainMessage: "Ujumbe wako umepokelewa kwa shukrani.",
+            subMessage: "Mwanachama wa timu yetu atawasiliana nawe hivi karibuni. Huruma yako inachochea dhamira yetu — pamoja tunaleta uponyaji na furaha katika eneo la Ziwa.",
+            homeBtnText: "Rudi Nyumbani",
+            involvedBtnText: "Shiriki",
+            footerText: "CAVITRD — Namba ya Usajili 14NGO/R/4896 | Huruma katika vitendo"
+        }
+    };
+
+    function setLanguage(lang) {
+        const t = translations[lang];
+        document.getElementById('mainTitle').innerText = t.mainTitle;
+        document.getElementById('mainMessage').innerText = t.mainMessage;
+        document.getElementById('subMessage').innerText = t.subMessage;
+        document.getElementById('homeBtn').innerHTML = `<i class="fas fa-home"></i> <span>${t.homeBtnText}</span>`;
+        document.getElementById('involvedBtn').innerHTML = `<i class="fas fa-hand-holding-heart"></i> <span>${t.involvedBtnText}</span>`;
+        document.getElementById('footerText').innerText = t.footerText;
+        
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('active');
+    }
+
+    // Attach event listeners to language buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const lang = e.currentTarget.getAttribute('data-lang');
+            setLanguage(lang);
+        });
+    });
+
+    // Set default English
+    setLanguage('en');
+
+    // Optional: subtle animation on load
+    const card = document.querySelector('.thankyou-card');
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    setTimeout(() => {
+        card.style.transition = 'all 0.6s ease-out';
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+    }, 100);
+</script>
+
+</body>
+</html>
