@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>About CAVITRD | Vision, Mission & Impact – Transforming Lives</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0f3b2c;
+            --primary-dark: #0a2a1f;
+            --primary-light: #2a9d6e;
+            --secondary: #e9b35f;
+            --secondary-dark: #d49a3a;
+            --accent: #f25e5e;
+            --light-bg: #fefcf5;
+            --white: #ffffff;
+            --dark: #1e2a2e;
+            --text-muted: #4a5b5e;
+            --shadow-sm: 0 12px 28px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 35px 50px -20px rgba(0, 0, 0, 0.2);
+            --gradient-warm: linear-gradient(125deg, #fdf8ed 0%, #fff8e7 100%);
+            --radius-xl: 2rem;
+            --radius-lg: 1.5rem;
+            --radius-md: 1rem;
+            --transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark);
+            line-height: 1.5;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* navbar premium */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 253, 245, 0.96);
+            backdrop-filter: blur(16px);
+            z-index: 1000;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            padding: 0.9rem 0;
+        }
+
+        .navbar.scrolled {
+            padding: 0.6rem 0;
+            box-shadow: var(--shadow-sm);
+            background: rgba(255, 253, 245, 0.98);
+        }
+
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            background: var(--primary);
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            color: white;
+            font-size: 1.8rem;
+            transition: var(--transition);
+            box-shadow: 0 6px 14px rgba(15, 59, 44, 0.2);
+        }
+
+        .logo-text h1 {
+            font-size: 1.7rem;
+            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            letter-spacing: -0.3px;
+        }
+
+        .logo-text span {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--secondary-dark);
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2.2rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--dark);
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-light);
+        }
+
+        .lang-group {
+            display: flex;
+            gap: 0.5rem;
+            background: #eef3f0;
+            padding: 0.3rem;
+            border-radius: 3rem;
+            margin-left: 1rem;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.8rem;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* page hero */
+        .page-hero {
+            min-height: 70vh;
+            background: linear-gradient(105deg, #0f3b2ccc 0%, #1e7b56cc 100%), url('https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=2032&auto=format');
+            background-size: cover;
+            background-position: center 30%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 90px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 4.2rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.7rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .section-sub {
+            text-align: center;
+            color: var(--text-muted);
+            max-width: 680px;
+            margin: 0 auto 3rem auto;
+            font-size: 1.1rem;
+        }
+
+        /* about grid */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 2rem;
+            box-shadow: var(--shadow-xl);
+            transition: transform 0.4s;
+        }
+
+        /* impact stats */
+        .impact-stats {
+            background: linear-gradient(115deg, #fef7e6, #fff2df);
+            border-radius: 2rem;
+            padding: 3rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stats-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .stat-number-big {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        /* mission cards */
+        .mission-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .mission-card {
+            background: white;
+            padding: 2.2rem;
+            border-radius: 1.8rem;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .mission-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .mission-icon {
+            background: var(--primary-light);
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .objective-card {
+            background: white;
+            border-radius: 1.8rem;
+            padding: 2rem 2rem;
+            transition: var(--transition);
+            border-left: 6px solid var(--secondary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* values */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            background: white;
+            border-radius: 1.8rem;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background: #fef3e2;
+            display: flex;
+            margin: 0 auto 1rem;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            font-size: 2rem;
+            color: var(--secondary-dark);
+        }
+
+        /* timeline */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 3rem auto 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background: var(--secondary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            padding: 1.5rem 2rem;
+            position: relative;
+            width: 50%;
+            background: white;
+            border-radius: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .timeline-item:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-md);
+        }
+
+        .timeline-item.left {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-year {
+            font-weight: 800;
+            color: var(--secondary-dark);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item h3 {
+            margin-bottom: 0.75rem;
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before { left: 20px; }
+            .timeline-item { width: calc(100% - 40px); left: 40px !important; text-align: left; margin-bottom: 1.5rem; }
+        }
+
+        /* CTA */
+        .cta-block {
+            background: linear-gradient(115deg, #0f3b2c, #1e7b56);
+            border-radius: 2.5rem;
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--dark);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+        }
+
+        .btn-primary:hover {
+            background: #f0b551;
+            transform: translateY(-5px);
+        }
+
+        .btn-outline-light {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline-light:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* footer */
+        footer {
+            background: #0e2a21;
+            color: #ddd;
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .footer-links a {
+            color: #cfdec9;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
+            transition: 0.2s;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            background: rgba(255,255,245,0.1);
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--secondary);
+            width: 48px;
+            height: 48px;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-size: 1.4rem;
+            box-shadow: var(--shadow-md);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s;
+            z-index: 99;
+            text-decoration: none;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                background: white;
+                width: 80%;
+                height: calc(100vh - 80px);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 2rem;
+                transition: 0.3s;
+                box-shadow: 5px 0 20px rgba(0,0,0,0.1);
+                display: flex !important;
+                z-index: 999;
+            }
+            .nav-menu.active {
+                left: 0;
+            }
+            .mobile-toggle {
+                display: block;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+        }
+        @media (max-width: 640px) {
+            .footer-grid { grid-template-columns: 1fr; }
+            .objectives-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+    <div class="container nav-flex">
+        <a href="index.html" class="logo">
+            <div class="logo-icon"><i class="fas fa-hands-helping"></i></div>
+            <div class="logo-text">
+                <h1>CAVITRD</h1>
+                <span>Reg. 14NGO/R/4896</span>
+            </div>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About Us</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="projects.html">What We Do</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <div class="lang-group">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="sw">SW</button>
+            </div>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="page-hero">
+        <div class="container hero-content">
+            <h1 id="heroTitle">About CAVITRD</h1>
+            <p id="heroText">A registered Tanzanian NGO (Reg. No. <strong>14NGO/R/4896</strong>) dedicated to children and adults with congenital anomalies, vision impairment, and trauma-related disabilities.</p>
+            <a href="#about-start" class="btn btn-primary"><i class="fas fa-arrow-down"></i> Discover our story</a>
+        </div>
+    </section>
+
+    <!-- intro about -->
+    <section id="about-start">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img"><img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=2028&auto=format" alt="CAVITRD medical outreach" loading="lazy"></div>
+                <div>
+                    <h2 class="section-title" style="text-align:left;" id="aboutTitle">Who We Are</h2>
+                    <p id="aboutText1"><strong>CAVITRD</strong> is a registered Tanzanian NGO with Registration number <strong>14NGO/R/4896</strong>, dealing with children and adults with congenital or acquired anomalies, vision impairment, and trauma-related disabilities.</p>
+                    <p id="aboutText2" style="margin-top:1rem;">We work with rural communities, especially across the Lake Zone region of Tanzania. Through surgical camps, vision care, and preventive education, we create lasting change.</p>
+                    <p id="aboutText3" style="margin-top:1rem;">Every life restored brings happiness to families and entire villages.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- impact numbers (joyful stats) -->
+    <div class="container">
+        <div class="impact-stats">
+            <div class="stats-grid">
+                <div class="stat-item"><div class="stat-number-big" data-count="6">0</div><div id="statYearsLabel">Years of service</div></div>
+                <div class="stat-item"><div class="stat-number-big" data-count="1870">0</div><div id="statSurgeryLabel">Surgeries supported</div></div>
+                <div class="stat-item"><div class="stat-number-big" data-count="52">0</div><div id="statCommunityLabel">Communities reached</div></div>
+                <div class="stat-item"><div class="stat-number-big" data-count="7600">0</div><div id="statLivesLabel">Lives transformed</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- vision & mission -->
+    <section id="vision-mission">
+        <div class="container">
+            <h2 class="section-title" id="vmTitle">Our Vision & Mission</h2>
+            <div class="mission-cards">
+                <div class="mission-card"><div class="mission-icon"><i class="fas fa-eye"></i></div><h3 id="visionTitle">Our Vision</h3><p id="visionText">Provision of surgical treatment to children born with congenital anomalies and those who acquire trauma-related disabilities. We also facilitate education to communities to prevent disabilities.</p></div>
+                <div class="mission-card"><div class="mission-icon"><i class="fas fa-bullseye"></i></div><h3 id="missionTitle">Our Mission</h3><p id="missionText">Provision of quality health care services and education to rural areas through organized surgical camps and outreach programs in the Lake Zone regions.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- objectives -->
+    <section style="background: #faf7f0;">
+        <div class="container">
+            <h2 class="section-title" id="objectivesTitle">Our Core Objectives</h2>
+            <div class="objectives-grid">
+                <div class="objective-card"><h3><i class="fas fa-bullhorn" style="color:var(--secondary); margin-right:0.8rem;"></i> <span id="obj1Title">Enhancing Awareness</span></h3><p id="obj1Text">Enhancing society's awareness of available treatment options for congenital anomalies and trauma-related disabilities. Informed communities lead to empowered families.</p></div>
+                <div class="objective-card"><h3><i class="fas fa-shield-alt" style="color:var(--secondary); margin-right:0.8rem;"></i> <span id="obj2Title">Advocating Prevention</span></h3><p id="obj2Text">Advocating for prevention and protection measures to reduce the development of anomalies and trauma-related disabilities through education and early intervention.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- values -->
+    <section>
+        <div class="container">
+            <h2 class="section-title" id="valuesTitle">Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card"><div class="value-icon"><i class="fas fa-hand-sparkles"></i></div><h3 id="val1Title">Dignity</h3><p id="val1Text">Respecting every individual's humanity and inherent worth.</p></div>
+                <div class="value-card"><div class="value-icon"><i class="fas fa-scale-balanced"></i></div><h3 id="val2Title">Equity</h3><p id="val2Text">Fair access to care regardless of background or location.</p></div>
+                <div class="value-card"><div class="value-icon"><i class="fas fa-heart"></i></div><h3 id="val3Title">Compassion</h3><p id="val3Text">Leading with empathy, kindness, and genuine care.</p></div>
+                <div class="value-card"><div class="value-icon"><i class="fas fa-sun"></i></div><h3 id="val4Title">Transparency</h3><p id="val4Text">Honest, open, and accountable in all operations.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- history timeline -->
+    <section style="background: #fffaf0;">
+        <div class="container">
+            <h2 class="section-title" id="historyTitle">Our Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item left"><div class="timeline-year" id="year1">2017</div><h3 id="event1Title">Foundation</h3><p id="event1Text">Founded by healthcare professionals in Mwanza who saw urgent need for disability care.</p></div>
+                <div class="timeline-item right"><div class="timeline-year" id="year2">2018</div><h3 id="event2Title">Official Registration</h3><p id="event2Text">Registered as NGO <strong>14NGO/R/4896</strong>, expanding formal operations.</p></div>
+                <div class="timeline-item left"><div class="timeline-year" id="year3">2019</div><h3 id="event3Title">First Surgical Camps</h3><p id="event3Text">Life-changing procedures in remote Lake Zone communities.</p></div>
+                <div class="timeline-item right"><div class="timeline-year" id="year4">2025</div><h3 id="event4Title">Expanding Hope</h3><p id="event4Text">Thousands of lives touched, new partnerships & sustainable vision programs.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+        <div class="container">
+            <div class="cta-block">
+                <h2 id="ctaHeadline">Join Our Journey of Compassion</h2>
+                <p id="ctaDesc" style="margin-bottom:2rem;">Be part of the story — together we can bring happiness and health to every corner of Tanzania.</p>
+                <div><a href="contact.html" class="btn btn-primary" id="ctaBtn"><i class="fas fa-hand-holding-heart"></i> Support our mission</a>
+                <a href="projects.html" class="btn btn-outline-light" style="margin-left:1rem;">Explore our work</a></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div><h3 style="color:white;">CAVITRD</h3><p id="footerAbout">Registered NGO (14NGO/R/4896) serving Lake Zone, Tanzania: surgical, eye care & disability support.</p><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div>
+            <div><h4 id="quickTitle">Quick Links</h4><div class="footer-links"><a href="index.html">🏠 Home</a><a href="about.html">📖 About</a><a href="projects.html">📌 What We Do</a><a href="contact.html">📞 Contact</a></div></div>
+            <div><h4 id="contactTitleFooter">Contact</h4><div class="footer-links"><a><i class="fas fa-map-marker-alt"></i> <span id="contactAddr">Mwanza, Tanzania</span></a><a><i class="fas fa-phone-alt"></i> <span id="contactPhone">+255 718 851 139</span></a><a><i class="fas fa-envelope"></i> <span id="contactEmail">info@cavitrd.org</span></a><a><i class="fas fa-id-card"></i> <span id="contactReg">Reg: 14NGO/R/4896</span></a></div></div>
+            <div><h4 id="supportTitle">Get Involved</h4><p id="supportText">Volunteer, donate or partner with us to create smiles.</p><div style="margin-top:1rem;"><a href="contact.html" class="btn btn-primary" style="padding:0.6rem 1.2rem; font-size:0.8rem;">Become a supporter</a></div></div>
+        </div>
+        <div style="border-top:1px solid #2f5544; padding-top:1.5rem; text-align:center; font-size:0.8rem;" id="copyright">© 2026 CAVITRD — Transforming lives with love & hope. All rights reserved.</div>
+    </div>
+</footer>
+
+<a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+<script>
+    // translations
+    const translations = {
+        en: {
+            heroTitle: "About CAVITRD", heroText: "A registered Tanzanian NGO (Reg. No. <strong>14NGO/R/4896</strong>) dedicated to children and adults with congenital anomalies, vision impairment, and trauma-related disabilities.",
+            aboutTitle: "Who We Are", aboutText1: "<strong>CAVITRD</strong> is a registered Tanzanian NGO with Registration number <strong>14NGO/R/4896</strong>, dealing with children and adults with congenital or acquired anomalies, vision impairment, and trauma-related disabilities.", aboutText2: "We work with rural communities, especially across the Lake Zone region of Tanzania. Through surgical camps, vision care, and preventive education, we create lasting change.", aboutText3: "Every life restored brings happiness to families and entire villages.",
+            statYearsLabel: "Years of service", statSurgeryLabel: "Surgeries supported", statCommunityLabel: "Communities reached", statLivesLabel: "Lives transformed",
+            vmTitle: "Our Vision & Mission", visionTitle: "Our Vision", visionText: "Provision of surgical treatment to children born with congenital anomalies and those who acquire trauma-related disabilities. We also facilitate education to communities to prevent disabilities.", missionTitle: "Our Mission", missionText: "Provision of quality health care services and education to rural areas through organized surgical camps and outreach programs in the Lake Zone regions.",
+            objectivesTitle: "Our Core Objectives", obj1Title: "Enhancing Awareness", obj1Text: "Enhancing society's awareness of available treatment options for congenital anomalies and trauma-related disabilities. Informed communities lead to empowered families.", obj2Title: "Advocating Prevention", obj2Text: "Advocating for prevention and protection measures to reduce the development of anomalies and trauma-related disabilities through education and early intervention.",
+            valuesTitle: "Our Core Values", val1Title: "Dignity", val1Text: "Respecting every individual's humanity and inherent worth.", val2Title: "Equity", val2Text: "Fair access to care regardless of background or location.", val3Title: "Compassion", val3Text: "Leading with empathy, kindness, and genuine care.", val4Title: "Transparency", val4Text: "Honest, open, and accountable in all operations.",
+            historyTitle: "Our Journey", year1: "2017", event1Title: "Foundation", event1Text: "Founded by healthcare professionals in Mwanza who saw urgent need for disability care.", year2: "2018", event2Title: "Official Registration", event2Text: "Registered as NGO <strong>14NGO/R/4896</strong>, expanding formal operations.", year3: "2019", event3Title: "First Surgical Camps", event3Text: "Life-changing procedures in remote Lake Zone communities.", year4: "2025", event4Title: "Expanding Hope", event4Text: "Thousands of lives touched, new partnerships & sustainable vision programs.",
+            ctaHeadline: "Join Our Journey of Compassion", ctaDesc: "Be part of the story — together we can bring happiness and health to every corner of Tanzania.",
+            footerAbout: "Registered NGO (14NGO/R/4896) serving Lake Zone, Tanzania: surgical, eye care & disability support.", quickTitle: "Quick Links", contactTitleFooter: "Contact", supportTitle: "Get Involved", supportText: "Volunteer, donate or partner with us to create smiles.", contactAddr: "Mwanza, Tanzania", contactPhone: "+255 718 851 139", contactEmail: "info@cavitrd.org", contactReg: "Reg: 14NGO/R/4896", copyright: "© 2026 CAVITRD — Transforming lives with love & hope. All rights reserved."
+        },
+        sw: {
+            heroTitle: "Kuhusu CAVITRD", heroText: "AS iliyosajiliwa Tanzania (Namba <strong>14NGO/R/4896</strong>) inayojitolea kwa watoto na watu wazima wenye kasoro za kuzaliwa, utofu wa kuona, na ulemavu wa kiwewe.",
+            aboutTitle: "Sisi ni Nani", aboutText1: "<strong>CAVITRD</strong> ni AS iliyosajiliwa Tanzania Namba <strong>14NGO/R/4896</strong>, inayoshughulikia watoto na watu wazima wenye kasoro za kuzaliwa au zilizopatikana, utofu wa kuona, na ulemavu unaohusishwa na trauma.", aboutText2: "Tunafanya kazi na jamii za vijijini hasa eneo la Ziwa Tanzania. Kupitia kambi za upasuaji, huduma za macho na elimu, tunaunda mabadiliko ya kudumu.", aboutText3: "Kila maisha yaliyorejeshwa yanaleta furaha kwa familia na vijiji vyote.",
+            statYearsLabel: "Miaka ya huduma", statSurgeryLabel: "Upasuaji uliotolewa", statCommunityLabel: "Jamii zilizofikiwa", statLivesLabel: "Maisha yaliyobadilishwa",
+            vmTitle: "Maono na Dhamira", visionTitle: "Maono Yetu", visionText: "Kutoa matibabu ya upasuaji kwa watoto waliozaliwa na kasoro na wale wanaopata ulemavu wa kiwewe. Pia tunaelimisha jamii kuzuia ulemavu.", missionTitle: "Dhamira Yetu", missionText: "Kutoa huduma bora za afya na elimu kwa maeneo ya vijijini kupitia kambi za upasuaji na programu za kufikia katika Mkoa wa Ziwa.",
+            objectivesTitle: "Malengo Yetu", obj1Title: "Kuongeza Ufahamu", obj1Text: "Kuongeza ufahamu wa jamii kuhusu chaguzi za matibabu kwa kasoro za kuzaliwa na ulemavu wa kiwewe.", obj2Title: "Kutetea Kinga", obj2Text: "Kutetea hatua za kuzuia na kulinda ili kupunguza ulemavu wa kiwewe na kasoro kwa elimu na uingiliaji wa mapema.",
+            valuesTitle: "Maadili Yetu", val1Title: "Heshima", val1Text: "Kuheshimu utu wa kila mtu na thamani yake.", val2Title: "Usawa", val2Text: "Upatikanaji wa haki wa huduma bila ubaguzi.", val3Title: "Huruma", val3Text: "Kuongoza kwa huruma na wema.", val4Title: "Uwazi", val4Text: "Uaminifu na uwajibikaji katika shughuli zote.",
+            historyTitle: "Safari Yetu", year1: "2017", event1Title: "Msingi", event1Text: "Ilianzishwa na wataalamu wa afya Mwanza kuona hitaji la huduma za ulemavu.", year2: "2018", event2Title: "Usajili Rasmi", event2Text: "Kusajiliwa kama AS namba <strong>14NGO/R/4896</strong>.", year3: "2019", event3Title: "Kambi za Kwanza za Upasuaji", event3Text: "Upasuaji unaobadilisha maisha maeneo ya mbali.", year4: "2025", event4Title: "Kupanua Matumaini", event4Text: "Maelfu ya maisha yamegusa, ushirikiano mpya na programu endelevu.",
+            ctaHeadline: "Jiunge na Safari ya Huruma", ctaDesc: "Kuwa sehemu ya hadithi — pamoja tunaweza kuleta furaha na afya kwa kila kona ya Tanzania.",
+            footerAbout: "AS iliyosajiliwa (14NGO/R/4896) inayohudumu Mkoa wa Ziwa: upasuaji, macho na ulemavu.", quickTitle: "Viungo", contactTitleFooter: "Wasiliana", supportTitle: "Shiriki", supportText: "Jitolee, changia au shirikiana kuleta tabasamu.", contactAddr: "Mwanza, Tanzania", contactPhone: "+255 718 851 139", contactEmail: "info@cavitrd.org", contactReg: "Usajili: 14NGO/R/4896", copyright: "© 2026 CAVITRD — Kubadilisha maisha kwa upendo. Haki zote zimehifadhiwa."
+        }
+    };
+    function setLanguage(lang) {
+        const t = translations[lang];
+        document.getElementById('heroTitle').innerHTML = t.heroTitle;
+        document.getElementById('heroText').innerHTML = t.heroText;
+        document.getElementById('aboutTitle').innerHTML = t.aboutTitle;
+        document.getElementById('aboutText1').innerHTML = t.aboutText1;
+        document.getElementById('aboutText2').innerHTML = t.aboutText2;
+        document.getElementById('aboutText3').innerHTML = t.aboutText3;
+        document.getElementById('statYearsLabel').innerText = t.statYearsLabel;
+        document.getElementById('statSurgeryLabel').innerText = t.statSurgeryLabel;
+        document.getElementById('statCommunityLabel').innerText = t.statCommunityLabel;
+        document.getElementById('statLivesLabel').innerText = t.statLivesLabel;
+        document.getElementById('vmTitle').innerText = t.vmTitle;
+        document.getElementById('visionTitle').innerText = t.visionTitle; document.getElementById('visionText').innerText = t.visionText;
+        document.getElementById('missionTitle').innerText = t.missionTitle; document.getElementById('missionText').innerText = t.missionText;
+        document.getElementById('objectivesTitle').innerText = t.objectivesTitle;
+        document.getElementById('obj1Title').innerText = t.obj1Title; document.getElementById('obj1Text').innerText = t.obj1Text;
+        document.getElementById('obj2Title').innerText = t.obj2Title; document.getElementById('obj2Text').innerText = t.obj2Text;
+        document.getElementById('valuesTitle').innerText = t.valuesTitle;
+        document.getElementById('val1Title').innerText = t.val1Title; document.getElementById('val1Text').innerText = t.val1Text;
+        document.getElementById('val2Title').innerText = t.val2Title; document.getElementById('val2Text').innerText = t.val2Text;
+        document.getElementById('val3Title').innerText = t.val3Title; document.getElementById('val3Text').innerText = t.val3Text;
+        document.getElementById('val4Title').innerText = t.val4Title; document.getElementById('val4Text').innerText = t.val4Text;
+        document.getElementById('historyTitle').innerText = t.historyTitle;
+        document.getElementById('year1').innerText = t.year1; document.getElementById('event1Title').innerText = t.event1Title; document.getElementById('event1Text').innerHTML = t.event1Text;
+        document.getElementById('year2').innerText = t.year2; document.getElementById('event2Title').innerText = t.event2Title; document.getElementById('event2Text').innerHTML = t.event2Text;
+        document.getElementById('year3').innerText = t.year3; document.getElementById('event3Title').innerText = t.event3Title; document.getElementById('event3Text').innerHTML = t.event3Text;
+        document.getElementById('year4').innerText = t.year4; document.getElementById('event4Title').innerText = t.event4Title; document.getElementById('event4Text').innerHTML = t.event4Text;
+        document.getElementById('ctaHeadline').innerText = t.ctaHeadline; document.getElementById('ctaDesc').innerText = t.ctaDesc;
+        document.getElementById('footerAbout').innerHTML = t.footerAbout; document.getElementById('quickTitle').innerText = t.quickTitle; document.getElementById('contactTitleFooter').innerText = t.contactTitleFooter;
+        document.getElementById('supportTitle').innerText = t.supportTitle; document.getElementById('supportText').innerText = t.supportText;
+        document.getElementById('contactAddr').innerText = t.contactAddr; document.getElementById('contactPhone').innerText = t.contactPhone;
+        document.getElementById('contactEmail').innerText = t.contactEmail; document.getElementById('contactReg').innerText = t.contactReg;
+        document.getElementById('copyright').innerHTML = t.copyright;
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('active');
+    }
+    // counter animation
+    const counterElements = document.querySelectorAll('.stat-number-big');
+    let counted = false;
+    function startStats() {
+        if(counted) return;
+        counterElements.forEach(el => {
+            const target = parseInt(el.getAttribute('data-count'), 10);
+            let current = 0;
+            const step = Math.ceil(target / 50);
+            const update = () => {
+                current += step;
+                if(current < target) { el.innerText = current; requestAnimationFrame(update); }
+                else el.innerText = target;
+            };
+            update();
+        });
+        counted = true;
+    }
+    const statsSection = document.querySelector('.impact-stats');
+    const observerStats = new IntersectionObserver((entries) => { if(entries[0].isIntersecting && !counted) startStats(); }, { threshold: 0.3 });
+    if(statsSection) observerStats.observe(statsSection);
+    
+    // nav, mobile, back-to-top
+    const navbar = document.getElementById('navbar');
+    const backBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 50) navbar.classList.add('scrolled');
+        else navbar.classList.remove('scrolled');
+        if(window.scrollY > 400) backBtn.classList.add('show');
+        else backBtn.classList.remove('show');
+    });
+    backBtn.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'}); });
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+    mobileToggle.addEventListener('click', () => { navMenu.classList.toggle('active'); mobileToggle.innerHTML = navMenu.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>'; });
+    document.querySelectorAll('.nav-menu a').forEach(link => { link.addEventListener('click', () => { navMenu.classList.remove('active'); mobileToggle.innerHTML = '<i class="fas fa-bars"></i>'; }); });
+    document.querySelectorAll('.lang-btn').forEach(btn => { btn.addEventListener('click', (e) => { setLanguage(e.currentTarget.getAttribute('data-lang')); }); });
+    setLanguage('en');
+    // smooth anchor
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const hash = this.getAttribute('href');
+            if(hash === '#') return;
+            const target = document.querySelector(hash);
+            if(target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        });
+    });
+</script>
+</body>
+</html>
