@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Our Team | CAVITRD – Heart of Compassion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0f3b2c;
+            --primary-dark: #0a2a1f;
+            --primary-light: #2a9d6e;
+            --secondary: #e9b35f;
+            --secondary-dark: #d49a3a;
+            --accent: #f25e5e;
+            --light-bg: #fefcf5;
+            --white: #ffffff;
+            --dark: #1e2a2e;
+            --text-muted: #4a5b5e;
+            --shadow-sm: 0 12px 28px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 35px 50px -20px rgba(0, 0, 0, 0.2);
+            --radius-xl: 2rem;
+            --radius-lg: 1.5rem;
+            --radius-md: 1rem;
+            --transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark);
+            line-height: 1.5;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* premium navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 253, 245, 0.96);
+            backdrop-filter: blur(16px);
+            z-index: 1000;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            padding: 0.9rem 0;
+        }
+
+        .navbar.scrolled {
+            padding: 0.6rem 0;
+            box-shadow: var(--shadow-sm);
+            background: rgba(255, 253, 245, 0.98);
+        }
+
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            background: var(--primary);
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            color: white;
+            font-size: 1.8rem;
+            transition: var(--transition);
+            box-shadow: 0 6px 14px rgba(15, 59, 44, 0.2);
+        }
+
+        .logo-text h1 {
+            font-size: 1.7rem;
+            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            letter-spacing: -0.3px;
+        }
+
+        .logo-text span {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--secondary-dark);
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2.2rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--dark);
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-light);
+        }
+
+        .lang-group {
+            display: flex;
+            gap: 0.5rem;
+            background: #eef3f0;
+            padding: 0.3rem;
+            border-radius: 3rem;
+            margin-left: 1rem;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.8rem;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* page hero */
+        .page-hero {
+            min-height: 65vh;
+            background: linear-gradient(105deg, #0f3b2ccc 0%, #1e7b56cc 100%), url('https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=2032&auto=format');
+            background-size: cover;
+            background-position: center 30%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 90px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: var(--transition);
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--dark);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+        }
+
+        .btn-primary:hover {
+            background: #f0b551;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline-light {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.7rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            max-width: 680px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* team grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .team-card {
+            background: var(--white);
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .team-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .team-img {
+            height: 340px;
+            background: #e2e8e0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .team-card:hover .team-img img {
+            transform: scale(1.08);
+        }
+
+        .team-role {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: var(--secondary);
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: var(--dark);
+            z-index: 2;
+        }
+
+        .team-content {
+            padding: 1.8rem;
+        }
+
+        .team-content h3 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .team-position {
+            color: var(--secondary-dark);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .team-bio {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .social-icons a {
+            background: #f0f2f0;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            transition: 0.2s;
+        }
+
+        .social-icons a:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* medical cards */
+        .medical-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.8rem;
+            margin-top: 2rem;
+        }
+
+        .medical-card {
+            background: white;
+            border-radius: 1.8rem;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .medical-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+        .medical-icon { background: var(--primary-light); width: 70px; height: 70px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; border-radius: 60px; font-size: 2rem; color: white; }
+        .medical-count { font-size: 2.5rem; font-weight: 800; color: var(--secondary); margin-top: 0.8rem; }
+
+        /* volunteer stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .stat-card {
+            background: white;
+            padding: 2rem 1rem;
+            border-radius: 1.8rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        /* cta join */
+        .join-team {
+            background: linear-gradient(115deg, #0f3b2c, #1e7b56);
+            border-radius: 2rem;
+            padding: 3rem 2rem;
+            text-align: center;
+            color: white;
+            margin: 3rem 0;
+        }
+
+        footer {
+            background: #0e2a21;
+            color: #ddd;
+            padding: 3rem 0 1.5rem;
+            margin-top: 2rem;
+        }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 2rem; margin-bottom: 2rem; }
+        .footer-links a { display: inline-flex; align-items: center; gap: 0.6rem; color: #cfdec9; text-decoration: none; margin-bottom: 0.8rem; }
+        .social-links { display: flex; gap: 1rem; margin-top: 1rem; }
+        .social-links a { background: rgba(255,255,245,0.1); width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; }
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--secondary);
+            width: 48px;
+            height: 48px;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-size: 1.4rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s;
+            z-index: 99;
+            text-decoration: none;
+        }
+        .back-to-top.show { opacity: 1; visibility: visible; }
+
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                background: white;
+                width: 80%;
+                height: calc(100vh - 80px);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 2rem;
+                transition: 0.3s;
+                box-shadow: 5px 0 20px rgba(0,0,0,0.1);
+                display: flex !important;
+                z-index: 999;
+            }
+            .nav-menu.active { left: 0; }
+            .mobile-toggle { display: block; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 640px) {
+            .footer-grid { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+    <div class="container nav-flex">
+        <a href="index.html" class="logo">
+            <div class="logo-icon"><i class="fas fa-hands-helping"></i></div>
+            <div class="logo-text">
+                <h1>CAVITRD</h1>
+                <span>Reg. 14NGO/R/4896</span>
+            </div>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="team.html" class="active">Our Team</a></li>
+            <li><a href="projects.html">What We Do</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <div class="lang-group">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="sw">SW</button>
+            </div>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="page-hero">
+        <div class="container hero-content">
+            <h1 id="heroTitle">Heart of CAVITRD</h1>
+            <p id="heroText">Meet the passionate changemakers — doctors, leaders, and volunteers — bringing hope to the Lake Zone every day.</p>
+            <a href="#leadership" class="btn btn-primary"><i class="fas fa-users"></i> <span id="heroBtn">Meet our family</span></a>
+        </div>
+    </section>
+
+    <div class="container" id="leadership">
+        <div class="section-header">
+            <h2 id="leadershipTitle">Our Leadership Team</h2>
+            <p id="leadershipSub">Visionary guidance & unwavering dedication</p>
+        </div>
+        <div class="team-grid" id="teamGrid">
+            <!-- James Shimba -->
+            <div class="team-card">
+                <div class="team-img"><img src="https://via.placeholder.com/400x340?text=James+Shimba" alt="James Shimba" id="member1Img" style="background:#cfdec9;"></div>
+                <div class="team-content">
+                    <h3 id="member1Name">James Shimba</h3>
+                    <div class="team-position" id="member1Pos">Chairperson</div>
+                    <div class="team-bio" id="member1Bio">Founding leader with over 15 years in community health advocacy. Passionate about inclusive care for children with disabilities.</div>
+                    <div class="social-icons"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fas fa-envelope"></i></a></div>
+                </div>
+            </div>
+            <!-- Irene Amati Chacha -->
+            <div class="team-card">
+                <div class="team-img"><img src="https://via.placeholder.com/400x340?text=Irene+Amati" alt="Irene Amati"></div>
+                <div class="team-content">
+                    <h3 id="member2Name">Irene Amati Chacha</h3>
+                    <div class="team-position" id="member2Pos">Treasurer</div>
+                    <div class="team-bio" id="member2Bio">Finance expert ensuring every donation maximizes impact. Committed to transparency and sustainable growth.</div>
+                    <div class="social-icons"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fas fa-envelope"></i></a></div>
+                </div>
+            </div>
+            <!-- Anneth Ndelilo Mwenda -->
+            <div class="team-card">
+                <div class="team-img"><img src="https://via.placeholder.com/400x340?text=Anneth+Ndelilo" alt="Anneth Ndelilo"></div>
+                <div class="team-content">
+                    <h3 id="member3Name">Anneth Ndelilo Mwenda</h3>
+                    <div class="team-position" id="member3Pos">Secretary</div>
+                    <div class="team-bio" id="member3Bio">Community mobilizer and strategic planner, ensuring programs reach the most remote villages.</div>
+                    <div class="social-icons"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fas fa-envelope"></i></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section style="background: #faf7f0; padding: 4rem 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="medicalTitle">Medical Excellence</h2>
+                <p id="medicalSub">Specialists who restore smiles & sight</p>
+            </div>
+            <div class="medical-grid">
+                <div class="medical-card"><div class="medical-icon"><i class="fas fa-user-md"></i></div><h3 id="spec1Title">Surgeons</h3><p id="spec1Desc">Congenital & trauma surgery experts</p><div class="medical-count" data-count="12">0</div></div>
+                <div class="medical-card"><div class="medical-icon"><i class="fas fa-child"></i></div><h3 id="spec2Title">Pediatricians</h3><p id="spec2Desc">Child development specialists</p><div class="medical-count" data-count="8">0</div></div>
+                <div class="medical-card"><div class="medical-icon"><i class="fas fa-eye"></i></div><h3 id="spec3Title">Ophthalmologists</h3><p id="spec3Desc">Vision restoration & eye care</p><div class="medical-count" data-count="6">0</div></div>
+                <div class="medical-card"><div class="medical-icon"><i class="fas fa-user-nurse"></i></div><h3 id="spec4Title">Nurses</h3><p id="spec4Desc">Pre & post-op compassionate care</p><div class="medical-count" data-count="25">0</div></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="section-header">
+            <h2 id="volTitle">Volunteers & Field Heroes</h2>
+            <p id="volSub">The hands that make miracles happen every day</p>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-card"><div class="stat-number" data-count="142">0</div><div id="stat1Label">Active Volunteers</div></div>
+            <div class="stat-card"><div class="stat-number" data-count="52">0</div><div id="stat2Label">Community Health Workers</div></div>
+            <div class="stat-card"><div class="stat-number" data-count="18">0</div><div id="stat3Label">Training Specialists</div></div>
+            <div class="stat-card"><div class="stat-number" data-count="31">0</div><div id="stat4Label">Community Interpreters</div></div>
+        </div>
+        <p id="volMessage" style="text-align: center; max-width: 700px; margin: 1rem auto 2rem; font-size: 1rem;">From local leaders to international volunteers, our family is bonded by compassion. Join us to spread happiness across Tanzania.</p>
+        <div style="text-align: center; margin-bottom: 2rem;"><a href="contact.html" class="btn btn-primary"><i class="fas fa-heart"></i> <span id="joinVolBtn">Become a volunteer</span></a></div>
+    </div>
+
+    <div class="container">
+        <div class="join-team">
+            <h2 id="joinTitle">Join the Movement of Hope</h2>
+            <p id="joinText">Whether you’re a medical professional, a student, or simply someone who cares — your time and talent can transform lives.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="contact.html" class="btn btn-primary"><i class="fas fa-briefcase"></i> <span id="careerBtn">Careers</span></a>
+                <a href="contact.html" class="btn btn-outline-light"><i class="fas fa-handshake"></i> <span id="partnerBtn">Partner with us</span></a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div><h3>CAVITRD</h3><p id="footerAbout">Registered NGO (14NGO/R/4896) serving Lake Zone: surgical, eye care & disability support.</p><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div>
+            <div><h4 id="quickTitle">Quick links</h4><div class="footer-links"><a href="index.html">🏠 Home</a><a href="about.html">📖 About</a><a href="team.html">👥 Our Team</a><a href="contact.html">📞 Contact</a></div></div>
+            <div><h4 id="contactFooterTitle">Contact</h4><div class="footer-links"><a><i class="fas fa-map-marker-alt"></i> Mwanza, Tanzania</a><a><i class="fas fa-phone-alt"></i> +255 718 851 139</a><a><i class="fas fa-envelope"></i> info@cavitrd.org</a><a><i class="fas fa-id-card"></i> Reg: 14NGO/R/4896</a></div></div>
+            <div><h4 id="joinFooterTitle">Get involved</h4><p id="joinFooterText">Every hand brings hope. Volunteer, donate or partner with us.</p><div style="margin-top:1rem;"><a href="contact.html" class="btn btn-primary" style="padding:0.6rem 1.2rem; font-size:0.8rem;">Join today</a></div></div>
+        </div>
+        <div style="border-top:1px solid #2f5544; padding-top:1.5rem; text-align:center; font-size:0.8rem;" id="copyright">© 2026 CAVITRD — Compassion in action. All rights reserved.</div>
+    </div>
+</footer>
+<a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+<script>
+    // translations EN/SW
+    const translations = {
+        en: {
+            heroTitle: "Heart of CAVITRD", heroText: "Meet the passionate changemakers — doctors, leaders, and volunteers — bringing hope to the Lake Zone every day.", heroBtn: "Meet our family",
+            leadershipTitle: "Our Leadership Team", leadershipSub: "Visionary guidance & unwavering dedication",
+            member1Name: "James Shimba", member1Pos: "Chairperson", member1Bio: "Founding leader with over 15 years in community health advocacy. Passionate about inclusive care for children with disabilities.",
+            member2Name: "Irene Amati Chacha", member2Pos: "Treasurer", member2Bio: "Finance expert ensuring every donation maximizes impact. Committed to transparency and sustainable growth.",
+            member3Name: "Anneth Ndelilo Mwenda", member3Pos: "Secretary", member3Bio: "Community mobilizer and strategic planner, ensuring programs reach the most remote villages.",
+            medicalTitle: "Medical Excellence", medicalSub: "Specialists who restore smiles & sight",
+            spec1Title: "Surgeons", spec1Desc: "Congenital & trauma surgery experts", spec2Title: "Pediatricians", spec2Desc: "Child development specialists", spec3Title: "Ophthalmologists", spec3Desc: "Vision restoration & eye care", spec4Title: "Nurses", spec4Desc: "Pre & post-op compassionate care",
+            volTitle: "Volunteers & Field Heroes", volSub: "The hands that make miracles happen every day",
+            stat1Label: "Active Volunteers", stat2Label: "Community Health Workers", stat3Label: "Training Specialists", stat4Label: "Community Interpreters",
+            volMessage: "From local leaders to international volunteers, our family is bonded by compassion. Join us to spread happiness across Tanzania.",
+            joinVolBtn: "Become a volunteer",
+            joinTitle: "Join the Movement of Hope", joinText: "Whether you’re a medical professional, a student, or simply someone who cares — your time and talent can transform lives.",
+            careerBtn: "Careers", partnerBtn: "Partner with us",
+            footerAbout: "Registered NGO (14NGO/R/4896) serving Lake Zone: surgical, eye care & disability support.", quickTitle: "Quick links", contactFooterTitle: "Contact", joinFooterTitle: "Get involved", joinFooterText: "Every hand brings hope. Volunteer, donate or partner with us.",
+            copyright: "© 2026 CAVITRD — Compassion in action. All rights reserved."
+        },
+        sw: {
+            heroTitle: "Moyo wa CAVITRD", heroText: "Kutana na wabadilishaji wenye shauku — madaktari, viongozi na wajitolea — wanaoleta matumaini katika eneo la Ziwa kila siku.", heroBtn: "Kutana na familia yetu",
+            leadershipTitle: "Timu ya Uongozi", leadershipSub: "Mwongozo wa maono na kujitolea thabiti",
+            member1Name: "James Shimba", member1Pos: "Mwenyekiti", member1Bio: "Kiongozi mwanzilishi mwenye zaidi ya miaka 15 katika utetezi wa afya ya jamii. Anajali sana huduma jumuishi kwa watoto wenye ulemavu.",
+            member2Name: "Irene Amati Chacha", member2Pos: "Mtunza Hazina", member2Bio: "Mtaalamu wa fedha anayeuhakikisha kila mchango una athari kubwa. Amejitolea kwa uwazi na ukuaji endelevu.",
+            member3Name: "Anneth Ndelilo Mwenda", member3Pos: "Katibu", member3Bio: "Mhamasishaji wa jamii na mpangaji mikakati, anahakikisha programu zinafikia vijiji vilivyo mbali zaidi.",
+            medicalTitle: "Ubora wa Matibabu", medicalSub: "Wataalamu wanaorejesha tabasamu na macho",
+            spec1Title: "Wapasuaji", spec1Desc: "Wataalamu wa upasuaji wa kasoro na kiwewe", spec2Title: "Madaktari wa watoto", spec2Desc: "Wataalamu wa ukuaji wa mtoto", spec3Title: "Madaktari wa macho", spec3Desc: "Kurejesha uwezo wa kuona", spec4Title: "Waumishi", spec4Desc: "Huduma ya huruma kabla na baada ya upasuaji",
+            volTitle: "Wajitolea na Mashujaa wa Uwanjani", volSub: "Mikono inayofanya miujiza kila siku",
+            stat1Label: "Wajitolea Wanaofanya Kazi", stat2Label: "Wahudumu wa Afya ya Jamii", stat3Label: "Wataalamu wa Mafunzo", stat4Label: "Wakalimani wa Jamii",
+            volMessage: "Kuanzia viongozi wa ndani hadi wajitolea wa kimataifa, familia yetu imeunganishwa kwa huruma. Jiunge nasi kueneza furaha Tanzania kote.",
+            joinVolBtn: "Jitolee",
+            joinTitle: "Jiunge na Vuguvugu la Matumaini", joinText: "Iwe wewe ni mtaalamu wa afya, mwanafunzi, au mtu anayejali — muda wako na talanta yako inaweza kubadilisha maisha.",
+            careerBtn: "Kazi", partnerBtn: "Shirikiana nasi",
+            footerAbout: "AS iliyosajiliwa (14NGO/R/4896) inayohudumu Ziwa: upasuaji, macho na usaidizi wa ulemavu.", quickTitle: "Viungo vya haraka", contactFooterTitle: "Wasiliana", joinFooterTitle: "Shiriki", joinFooterText: "Kila mkono unaleta matumaini. Jitolee, changia au shirikiana nasi.",
+            copyright: "© 2026 CAVITRD — Huruma katika vitendo. Haki zote zimehifadhiwa."
+        }
+    };
+
+    function setLanguage(lang) {
+        const t = translations[lang];
+        document.getElementById('heroTitle').innerText = t.heroTitle;
+        document.getElementById('heroText').innerText = t.heroText;
+        document.getElementById('heroBtn').innerText = t.heroBtn;
+        document.getElementById('leadershipTitle').innerText = t.leadershipTitle;
+        document.getElementById('leadershipSub').innerText = t.leadershipSub;
+        document.getElementById('member1Name').innerText = t.member1Name;
+        document.getElementById('member1Pos').innerText = t.member1Pos;
+        document.getElementById('member1Bio').innerText = t.member1Bio;
+        document.getElementById('member2Name').innerText = t.member2Name;
+        document.getElementById('member2Pos').innerText = t.member2Pos;
+        document.getElementById('member2Bio').innerText = t.member2Bio;
+        document.getElementById('member3Name').innerText = t.member3Name;
+        document.getElementById('member3Pos').innerText = t.member3Pos;
+        document.getElementById('member3Bio').innerText = t.member3Bio;
+        document.getElementById('medicalTitle').innerText = t.medicalTitle;
+        document.getElementById('medicalSub').innerText = t.medicalSub;
+        document.getElementById('spec1Title').innerText = t.spec1Title;
+        document.getElementById('spec1Desc').innerText = t.spec1Desc;
+        document.getElementById('spec2Title').innerText = t.spec2Title;
+        document.getElementById('spec2Desc').innerText = t.spec2Desc;
+        document.getElementById('spec3Title').innerText = t.spec3Title;
+        document.getElementById('spec3Desc').innerText = t.spec3Desc;
+        document.getElementById('spec4Title').innerText = t.spec4Title;
+        document.getElementById('spec4Desc').innerText = t.spec4Desc;
+        document.getElementById('volTitle').innerText = t.volTitle;
+        document.getElementById('volSub').innerText = t.volSub;
+        document.getElementById('stat1Label').innerText = t.stat1Label;
+        document.getElementById('stat2Label').innerText = t.stat2Label;
+        document.getElementById('stat3Label').innerText = t.stat3Label;
+        document.getElementById('stat4Label').innerText = t.stat4Label;
+        document.getElementById('volMessage').innerText = t.volMessage;
+        document.getElementById('joinVolBtn').innerText = t.joinVolBtn;
+        document.getElementById('joinTitle').innerText = t.joinTitle;
+        document.getElementById('joinText').innerText = t.joinText;
+        document.getElementById('careerBtn').innerText = t.careerBtn;
+        document.getElementById('partnerBtn').innerText = t.partnerBtn;
+        document.getElementById('footerAbout').innerText = t.footerAbout;
+        document.getElementById('quickTitle').innerText = t.quickTitle;
+        document.getElementById('contactFooterTitle').innerText = t.contactFooterTitle;
+        document.getElementById('joinFooterTitle').innerText = t.joinFooterTitle;
+        document.getElementById('joinFooterText').innerText = t.joinFooterText;
+        document.getElementById('copyright').innerHTML = t.copyright;
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('active');
+    }
+
+    // counter animation
+    const counters = document.querySelectorAll('.medical-count, .stat-number');
+    let counted = false;
+    function animateCounters() {
+        if(counted) return;
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-count'), 10);
+            let current = 0;
+            const step = Math.ceil(target / 50);
+            const update = () => {
+                current += step;
+                if(current < target) { counter.innerText = current; requestAnimationFrame(update); }
+                else counter.innerText = target;
+            };
+            update();
+        });
+        counted = true;
+    }
+    const observerCount = new IntersectionObserver((entries) => {
+        if(entries[0].isIntersecting && !counted) animateCounters();
+    }, { threshold: 0.3 });
+    const medicalSection = document.querySelector('[style*="background: #faf7f0"]');
+    if(medicalSection) observerCount.observe(medicalSection);
+
+    // nav & back to top
+    const navbar = document.getElementById('navbar');
+    const backBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 50) navbar.classList.add('scrolled');
+        else navbar.classList.remove('scrolled');
+        if(window.scrollY > 400) backBtn.classList.add('show');
+        else backBtn.classList.remove('show');
+    });
+    backBtn.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'}); });
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+    mobileToggle.addEventListener('click', () => { navMenu.classList.toggle('active'); mobileToggle.innerHTML = navMenu.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>'; });
+    document.querySelectorAll('.nav-menu a').forEach(l => l.addEventListener('click', () => { navMenu.classList.remove('active'); mobileToggle.innerHTML = '<i class="fas fa-bars"></i>'; }));
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => setLanguage(e.currentTarget.getAttribute('data-lang')));
+    });
+    setLanguage('en');
+    // smooth anchors
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const hash = this.getAttribute('href');
+            if(hash === '#') return;
+            const target = document.querySelector(hash);
+            if(target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        });
+    });
+    // set initial counts for counters (fallback if not animated)
+    setTimeout(() => { if(!counted) animateCounters(); }, 800);
+</script>
+</body>
+</html>
