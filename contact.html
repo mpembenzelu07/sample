@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Contact CAVITRD | Reach out – We’d love to hear from you</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0f3b2c;
+            --primary-dark: #0a2a1f;
+            --primary-light: #2a9d6e;
+            --secondary: #e9b35f;
+            --secondary-dark: #d49a3a;
+            --accent: #f25e5e;
+            --light-bg: #fefcf5;
+            --white: #ffffff;
+            --dark: #1e2a2e;
+            --text-muted: #4a5b5e;
+            --shadow-sm: 0 12px 28px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 35px 50px -20px rgba(0, 0, 0, 0.2);
+            --radius-xl: 2rem;
+            --radius-lg: 1.5rem;
+            --radius-md: 1rem;
+            --transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark);
+            line-height: 1.5;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* navbar premium */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 253, 245, 0.96);
+            backdrop-filter: blur(16px);
+            z-index: 1000;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            padding: 0.9rem 0;
+        }
+
+        .navbar.scrolled {
+            padding: 0.6rem 0;
+            box-shadow: var(--shadow-sm);
+            background: rgba(255, 253, 245, 0.98);
+        }
+
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            background: var(--primary);
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            color: white;
+            font-size: 1.8rem;
+            transition: var(--transition);
+            box-shadow: 0 6px 14px rgba(15, 59, 44, 0.2);
+        }
+
+        .logo-text h1 {
+            font-size: 1.7rem;
+            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            letter-spacing: -0.3px;
+        }
+
+        .logo-text span {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--secondary-dark);
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2.2rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--dark);
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-light);
+        }
+
+        .lang-group {
+            display: flex;
+            gap: 0.5rem;
+            background: #eef3f0;
+            padding: 0.3rem;
+            border-radius: 3rem;
+            margin-left: 1rem;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.8rem;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* page hero */
+        .page-hero {
+            min-height: 65vh;
+            background: linear-gradient(105deg, #0f3b2ccc 0%, #1e7b56cc 100%), url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=2070&auto=format');
+            background-size: cover;
+            background-position: center 40%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 90px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* contact grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 3rem 0 4rem;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 2rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .info-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .info-item {
+            display: flex;
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+            align-items: flex-start;
+        }
+
+        .info-icon {
+            width: 54px;
+            height: 54px;
+            background: var(--primary-light);
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .info-text h3 {
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .registration-badge {
+            background: var(--primary);
+            color: white;
+            padding: 0.8rem 1.2rem;
+            border-radius: 2rem;
+            display: inline-block;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
+        .contact-form-card {
+            background: white;
+            border-radius: 2rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 1.2rem;
+            font-family: 'Inter', sans-serif;
+            transition: 0.2s;
+            background: var(--white);
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 3px rgba(42, 157, 110, 0.2);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: var(--transition);
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--dark);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+            width: 100%;
+            justify-content: center;
+        }
+
+        .btn-primary:hover {
+            background: #f0b551;
+            transform: translateY(-3px);
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .support-card {
+            background: white;
+            border-radius: 1.8rem;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .support-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .support-icon {
+            background: var(--primary-light);
+            width: 70px;
+            height: 70px;
+            display: flex;
+            margin: 0 auto 1rem;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 1.5rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-question {
+            padding: 1.2rem 1.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background: #fefaf0;
+            font-weight: 700;
+        }
+
+        .faq-question i {
+            color: var(--secondary);
+            transition: 0.2s;
+        }
+
+        .faq-answer {
+            padding: 0 1.8rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1.2rem 1.8rem 1.8rem;
+            max-height: 300px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(45deg);
+        }
+
+        /* map placeholder */
+        .map-placeholder {
+            background: #e9f0e9;
+            border-radius: 2rem;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        footer {
+            background: #0e2a21;
+            color: #ddd;
+            padding: 3rem 0 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: #cfdec9;
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            background: rgba(255,255,245,0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--secondary);
+            width: 48px;
+            height: 48px;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-size: 1.4rem;
+            box-shadow: var(--shadow-md);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s;
+            z-index: 99;
+            text-decoration: none;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 992px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                background: white;
+                width: 80%;
+                height: calc(100vh - 80px);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 2rem;
+                transition: 0.3s;
+                box-shadow: 5px 0 20px rgba(0,0,0,0.1);
+                display: flex !important;
+                z-index: 999;
+            }
+            .nav-menu.active { left: 0; }
+            .mobile-toggle { display: block; }
+        }
+        @media (max-width: 640px) {
+            .footer-grid { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+    <div class="container nav-flex">
+        <a href="index.html" class="logo">
+            <div class="logo-icon"><i class="fas fa-hands-helping"></i></div>
+            <div class="logo-text">
+                <h1>CAVITRD</h1>
+                <span>Reg. 14NGO/R/4896</span>
+            </div>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="projects.html">What We Do</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+            <div class="lang-group">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="sw">SW</button>
+            </div>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="page-hero">
+        <div class="container hero-content">
+            <h1 id="heroTitle">Reach Out, Let’s Connect</h1>
+            <p id="heroText">Questions, partnerships, or volunteer spirit — we’re here for you. Together we build happier, healthier communities.</p>
+            <a href="#contactForm" class="btn btn-primary" style="background:white; color:var(--primary);"><i class="fas fa-comment-dots"></i> <span id="heroBtn">Write to us</span></a>
+        </div>
+    </section>
+
+    <div class="container" id="contactForm">
+        <div class="contact-grid">
+            <!-- contact info -->
+            <div class="info-card">
+                <h2 style="color:var(--primary); margin-bottom:1.5rem;" id="contactInfoTitle">Get in touch</h2>
+                <div class="info-item"><div class="info-icon"><i class="fas fa-map-marker-alt"></i></div><div class="info-text"><h3 id="addressTitle">Our office</h3><p id="addressText">Mwanza, Tanzania — Lake Zone Region</p></div></div>
+                <div class="info-item"><div class="info-icon"><i class="fas fa-phone-alt"></i></div><div class="info-text"><h3 id="phoneTitle">Phone</h3><p id="phoneText">+255 718 851 139 <br> <span style="font-size:0.85rem;">Mon-Fri, 8am–5pm</span></p></div></div>
+                <div class="info-item"><div class="info-icon"><i class="fas fa-envelope"></i></div><div class="info-text"><h3 id="emailTitle">Email</h3><p id="emailText">info@cavitrd.org<br>partnerships@cavitrd.org</p></div></div>
+                <div class="info-item"><div class="info-icon"><i class="fas fa-clock"></i></div><div class="info-text"><h3 id="hoursTitle">Working hours</h3><p id="hoursText">Mon–Fri: 8:00 – 17:00<br>Sat: 9:00 – 13:00</p></div></div>
+                <div class="registration-badge" id="regBadge"><i class="fas fa-id-card"></i> Registration No. 14NGO/R/4896</div>
+            </div>
+
+            <!-- contact form -->
+            <div class="contact-form-card">
+                <h2 style="color:var(--primary); margin-bottom:1.5rem;" id="formTitle">Send a message</h2>
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group"><label id="fnameLabel">First name *</label><input type="text" id="firstName" required></div>
+                        <div class="form-group"><label id="lnameLabel">Last name *</label><input type="text" id="lastName" required></div>
+                    </div>
+                    <div class="form-group"><label id="emailLabelForm">Email *</label><input type="email" id="emailContact" required></div>
+                    <div class="form-group"><label id="phoneLabelForm">Phone (optional)</label><input type="tel" id="phoneContact"></div>
+                    <div class="form-group"><label id="subjectLabelForm">Subject *</label>
+                        <select id="subjectSelect" required>
+                            <option value="" id="subjectDefault">Select a subject</option>
+                            <option value="partnership" id="subj1">Partnership inquiry</option>
+                            <option value="volunteer" id="subj2">Volunteering</option>
+                            <option value="donation" id="subj3">Donation</option>
+                            <option value="medical" id="subj4">Medical services</option>
+                            <option value="general" id="subj5">General question</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label id="msgLabel">Message *</label><textarea rows="4" id="messageContact" required></textarea></div>
+                    <button type="submit" class="btn btn-primary" id="submitBtnText"><i class="fas fa-paper-plane"></i> Send message</button>
+                    <div id="formSuccessMessage" style="margin-top:1rem; text-align:center; color:var(--primary-light); display:none;"><i class="fas fa-check-circle"></i> Thanks! We’ll reply soon.</div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- support options -->
+    <section style="background: #faf7f0; padding: 4rem 0;">
+        <div class="container">
+            <h2 class="section-title" style="text-align:center; font-size:2.2rem;" id="supportTitle">Ways to support happiness</h2>
+            <div class="support-grid">
+                <div class="support-card"><div class="support-icon"><i class="fas fa-hand-holding-heart"></i></div><h3 id="donateTitle">Make a donation</h3><p id="donateText">Your generosity funds life-changing surgeries & care.</p><a href="#" class="btn btn-primary" style="margin-top:1rem; display:inline-flex; background:var(--secondary);" id="donateBtnSm">Donate now</a></div>
+                <div class="support-card"><div class="support-icon"><i class="fas fa-hands-helping"></i></div><h3 id="volunteerTitle">Volunteer</h3><p id="volunteerText">Join our outreach teams and make a real difference.</p><a href="#" class="btn btn-primary" style="margin-top:1rem; display:inline-flex; background:var(--secondary);" id="volunteerBtnSm">Volunteer</a></div>
+                <div class="support-card"><div class="support-icon"><i class="fas fa-handshake"></i></div><h3 id="partnerTitle">Partner with us</h3><p id="partnerText">Collaborate for sustainable impact in Lake Zone.</p><a href="#" class="btn btn-primary" style="margin-top:1rem; display:inline-flex; background:var(--secondary);" id="partnerBtnSm">Partner</a></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <div class="container" style="margin: 3rem auto;">
+        <h2 style="text-align:center; color:var(--primary); font-family: 'Playfair Display';" id="faqTitle">Frequently asked questions</h2>
+        <div style="max-width: 800px; margin: 2rem auto;">
+            <div class="faq-item"><div class="faq-question"><span id="faqQ1">How can I donate?</span><i class="fas fa-plus"></i></div><div class="faq-answer"><p id="faqA1">You can donate via bank transfer, mobile money, or at our office. All donations are receipted and go directly to surgical and vision programs.</p></div></div>
+            <div class="faq-item"><div class="faq-question"><span id="faqQ2">What volunteer roles are open?</span><i class="fas fa-plus"></i></div><div class="faq-answer"><p id="faqA2">Medical professionals, community educators, admin support, and field assistants. Email volunteer@cavitrd.org for current openings.</p></div></div>
+            <div class="faq-item"><div class="faq-question"><span id="faqQ3">How do I access surgical services?</span><i class="fas fa-plus"></i></div><div class="faq-answer"><p id="faqA3">Through our outreach camps or referrals. Contact our medical team at medical@cavitrd.org for eligibility and schedules.</p></div></div>
+            <div class="faq-item"><div class="faq-question"><span id="faqQ4">Can my organization partner with CAVITRD?</span><i class="fas fa-plus"></i></div><div class="faq-answer"><p id="faqA4">Absolutely! We collaborate with NGOs, hospitals, and corporates. Reach out to partnerships@cavitrd.org.</p></div></div>
+        </div>
+    </div>
+
+    <!-- map placeholder -->
+    <div class="container map-placeholder">
+        <i class="fas fa-map-marked-alt" style="font-size:3rem; color:var(--primary);"></i>
+        <h3 id="mapTitle">Our main hub: Mwanza, Tanzania</h3>
+        <p id="mapText">Visit us by appointment — we’d love to welcome you.</p>
+        <div style="background:#e2e8e2; border-radius:1rem; padding:1rem; margin-top:1rem;"><i class="fas fa-location-dot"></i> 📍 Lake Zone Regional coordination center</div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div><h3>CAVITRD</h3><p id="footerAbout">Registered NGO (14NGO/R/4896) serving Lake Zone: surgical, eye care & disability support.</p><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div>
+            <div><h4 id="quickTitle">Quick links</h4><div class="footer-links"><a href="index.html">🏠 Home</a><a href="about.html">📖 About</a><a href="projects.html">✨ What we do</a><a href="contact.html">📞 Contact</a></div></div>
+            <div><h4 id="contactFooterTitle">Contact</h4><div class="footer-links"><a><i class="fas fa-map-marker-alt"></i> Mwanza, Tanzania</a><a><i class="fas fa-phone-alt"></i> +255 718 851 139</a><a><i class="fas fa-envelope"></i> info@cavitrd.org</a><a><i class="fas fa-id-card"></i> Reg: 14NGO/R/4896</a></div></div>
+            <div><h4 id="joinTitle">Join us</h4><p id="joinText">Become a volunteer, donor or partner. Every hand brings hope.</p><div style="margin-top:1rem;"><a href="#contactForm" class="btn btn-primary" style="padding:0.6rem 1.2rem; font-size:0.8rem;">Get involved</a></div></div>
+        </div>
+        <div style="border-top:1px solid #2f5544; padding-top:1.5rem; text-align:center; font-size:0.8rem;" id="copyright">© 2026 CAVITRD — Compassion in action. All rights reserved.</div>
+    </div>
+</footer>
+<a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+<script>
+    // translations
+    const translations = {
+        en: {
+            heroTitle: "Reach Out, Let’s Connect", heroText: "Questions, partnerships, or volunteer spirit — we’re here for you. Together we build happier, healthier communities.", heroBtn: "Write to us",
+            contactInfoTitle: "Get in touch", addressTitle: "Our office", addressText: "Mwanza, Tanzania — Lake Zone Region", phoneTitle: "Phone", phoneText: "+255 718 851 139 <br> <span style='font-size:0.85rem;'>Mon-Fri, 8am–5pm</span>", emailTitle: "Email", emailText: "info@cavitrd.org<br>partnerships@cavitrd.org", hoursTitle: "Working hours", hoursText: "Mon–Fri: 8:00 – 17:00<br>Sat: 9:00 – 13:00", regBadge: "<i class='fas fa-id-card'></i> Registration No. 14NGO/R/4896",
+            formTitle: "Send a message", fnameLabel: "First name *", lnameLabel: "Last name *", emailLabelForm: "Email *", phoneLabelForm: "Phone (optional)", subjectLabelForm: "Subject *", subjectDefault: "Select a subject", subj1: "Partnership inquiry", subj2: "Volunteering", subj3: "Donation", subj4: "Medical services", subj5: "General question", msgLabel: "Message *", submitBtnText: "Send message",
+            supportTitle: "Ways to support happiness", donateTitle: "Make a donation", donateText: "Your generosity funds life-changing surgeries & care.", volunteerTitle: "Volunteer", volunteerText: "Join our outreach teams and make a real difference.", partnerTitle: "Partner with us", partnerText: "Collaborate for sustainable impact in Lake Zone.", donateBtnSm: "Donate now", volunteerBtnSm: "Volunteer", partnerBtnSm: "Partner",
+            faqTitle: "Frequently asked questions", faqQ1: "How can I donate?", faqA1: "You can donate via bank transfer, mobile money, or at our office. All donations are receipted and go directly to surgical and vision programs.", faqQ2: "What volunteer roles are open?", faqA2: "Medical professionals, community educators, admin support, and field assistants. Email volunteer@cavitrd.org for current openings.", faqQ3: "How do I access surgical services?", faqA3: "Through our outreach camps or referrals. Contact our medical team at medical@cavitrd.org for eligibility and schedules.", faqQ4: "Can my organization partner with CAVITRD?", faqA4: "Absolutely! We collaborate with NGOs, hospitals, and corporates. Reach out to partnerships@cavitrd.org.",
+            mapTitle: "Our main hub: Mwanza, Tanzania", mapText: "Visit us by appointment — we’d love to welcome you.",
+            footerAbout: "Registered NGO (14NGO/R/4896) serving Lake Zone: surgical, eye care & disability support.", quickTitle: "Quick links", contactFooterTitle: "Contact", joinTitle: "Join us", joinText: "Become a volunteer, donor or partner. Every hand brings hope.", copyright: "© 2026 CAVITRD — Compassion in action. All rights reserved."
+        },
+        sw: {
+            heroTitle: "Wasiliana Nasi, Tuungane", heroText: "Maswali, ushirikiano, au nia ya kujitolea — tuko hapa kwako. Pamoja tunaunda jamii zenye furaha na afya.", heroBtn: "Tuandikie",
+            contactInfoTitle: "Wasiliana nasi", addressTitle: "Ofisi yetu", addressText: "Mwanza, Tanzania — Eneo la Ziwa", phoneTitle: "Simu", phoneText: "+255 718 851 139 <br> <span style='font-size:0.85rem;'>Jumatatu-Ijumaa, 8am–5pm</span>", emailTitle: "Barua pepe", emailText: "info@cavitrd.org<br>partnerships@cavitrd.org", hoursTitle: "Saa za kazi", hoursText: "Jumatatu–Ijumaa: 8:00 – 17:00<br>Jumamosi: 9:00 – 13:00", regBadge: "<i class='fas fa-id-card'></i> Namba ya Usajili 14NGO/R/4896",
+            formTitle: "Tuma ujumbe", fnameLabel: "Jina la kwanza *", lnameLabel: "Jina la mwisho *", emailLabelForm: "Barua pepe *", phoneLabelForm: "Nambari ya simu (si lazima)", subjectLabelForm: "Mada *", subjectDefault: "Chagua mada", subj1: "Ushirikiano", subj2: "Kujitolea", subj3: "Mchango", subj4: "Huduma za matibabu", subj5: "Swali la jumla", msgLabel: "Ujumbe *", submitBtnText: "Tuma ujumbe",
+            supportTitle: "Njia za kuleta furaha", donateTitle: "Toa mchango", donateText: "Ukarimu wako unasaidia upasuaji na huduma.", volunteerTitle: "Jitolee", volunteerText: "Jiunge na timu zetu za ufikiaji na ufanye tofauti.", partnerTitle: "Shirikiana nasi", partnerText: "Shirikiana kwa athari endelevu katika Ziwa.", donateBtnSm: "Changia sasa", volunteerBtnSm: "Jitolee", partnerBtnSm: "Shirikiana",
+            faqTitle: "Maswali yanayoulizwa mara kwa mara", faqQ1: "Ninawezaje kutoa mchango?", faqA1: "Unaweza kutoa mchango kupitia benki, pesa za simu, au ofisini kwetu. Michango yote ina risiti na huenda moja kwa moja kwenye programu za upasuaji na macho.", faqQ2: "Nafasi gani za kujitolea zipo?", faqA2: "Wataalamu wa afya, waelimishaji wa jamii, usaidizi wa utawala, na wasaidizi wa uwanjani. Tuma barua pepe volunteer@cavitrd.org kwa nafasi za sasa.", faqQ3: "Ninapataje huduma za upasuaji?", faqA3: "Kupitia kambi zetu za ufikiaji au rufaa. Wasiliana na timu yetu ya matibabu medical@cavitrd.org.", faqQ4: "Je, shirika langu linaweza kushirikiana na CAVITRD?", faqA4: "Ndiyo kabisa! Tunashirikiana na NGO, hospitali, na mashirika. Wasiliana nasi partnerships@cavitrd.org.",
+            mapTitle: "Kituo chetu kikuu: Mwanza, Tanzania", mapText: "Tutembelee kwa miadi — tunafurahi kukukaribisha.",
+            footerAbout: "AS iliyosajiliwa (14NGO/R/4896) inayohudumu Ziwa: upasuaji, macho na usaidizi wa ulemavu.", quickTitle: "Viungo vya haraka", contactFooterTitle: "Wasiliana", joinTitle: "Jiunge nasi", joinText: "Kuwa mchangiaji, mjitoleaji au mshirika. Kila mkono unaleta matumaini.", copyright: "© 2026 CAVITRD — Huruma katika vitendo. Haki zote zimehifadhiwa."
+        }
+    };
+
+    function setLanguage(lang) {
+        const t = translations[lang];
+        document.getElementById('heroTitle').innerText = t.heroTitle;
+        document.getElementById('heroText').innerText = t.heroText;
+        document.getElementById('heroBtn').innerText = t.heroBtn;
+        document.getElementById('contactInfoTitle').innerText = t.contactInfoTitle;
+        document.getElementById('addressTitle').innerText = t.addressTitle;
+        document.getElementById('addressText').innerHTML = t.addressText;
+        document.getElementById('phoneTitle').innerText = t.phoneTitle;
+        document.getElementById('phoneText').innerHTML = t.phoneText;
+        document.getElementById('emailTitle').innerText = t.emailTitle;
+        document.getElementById('emailText').innerHTML = t.emailText;
+        document.getElementById('hoursTitle').innerText = t.hoursTitle;
+        document.getElementById('hoursText').innerHTML = t.hoursText;
+        document.getElementById('regBadge').innerHTML = t.regBadge;
+        document.getElementById('formTitle').innerText = t.formTitle;
+        document.getElementById('fnameLabel').innerHTML = t.fnameLabel;
+        document.getElementById('lnameLabel').innerHTML = t.lnameLabel;
+        document.getElementById('emailLabelForm').innerHTML = t.emailLabelForm;
+        document.getElementById('phoneLabelForm').innerHTML = t.phoneLabelForm;
+        document.getElementById('subjectLabelForm').innerHTML = t.subjectLabelForm;
+        document.getElementById('subjectDefault').innerText = t.subjectDefault;
+        document.getElementById('subj1').innerText = t.subj1;
+        document.getElementById('subj2').innerText = t.subj2;
+        document.getElementById('subj3').innerText = t.subj3;
+        document.getElementById('subj4').innerText = t.subj4;
+        document.getElementById('subj5').innerText = t.subj5;
+        document.getElementById('msgLabel').innerHTML = t.msgLabel;
+        document.getElementById('submitBtnText').innerHTML = '<i class="fas fa-paper-plane"></i> '+t.submitBtnText;
+        document.getElementById('supportTitle').innerText = t.supportTitle;
+        document.getElementById('donateTitle').innerText = t.donateTitle;
+        document.getElementById('donateText').innerText = t.donateText;
+        document.getElementById('volunteerTitle').innerText = t.volunteerTitle;
+        document.getElementById('volunteerText').innerText = t.volunteerText;
+        document.getElementById('partnerTitle').innerText = t.partnerTitle;
+        document.getElementById('partnerText').innerText = t.partnerText;
+        document.getElementById('donateBtnSm').innerHTML = t.donateBtnSm;
+        document.getElementById('volunteerBtnSm').innerHTML = t.volunteerBtnSm;
+        document.getElementById('partnerBtnSm').innerHTML = t.partnerBtnSm;
+        document.getElementById('faqTitle').innerText = t.faqTitle;
+        document.getElementById('faqQ1').innerText = t.faqQ1;
+        document.getElementById('faqA1').innerText = t.faqA1;
+        document.getElementById('faqQ2').innerText = t.faqQ2;
+        document.getElementById('faqA2').innerText = t.faqA2;
+        document.getElementById('faqQ3').innerText = t.faqQ3;
+        document.getElementById('faqA3').innerText = t.faqA3;
+        document.getElementById('faqQ4').innerText = t.faqQ4;
+        document.getElementById('faqA4').innerText = t.faqA4;
+        document.getElementById('mapTitle').innerText = t.mapTitle;
+        document.getElementById('mapText').innerText = t.mapText;
+        document.getElementById('footerAbout').innerText = t.footerAbout;
+        document.getElementById('quickTitle').innerText = t.quickTitle;
+        document.getElementById('contactFooterTitle').innerText = t.contactFooterTitle;
+        document.getElementById('joinTitle').innerText = t.joinTitle;
+        document.getElementById('joinText').innerText = t.joinText;
+        document.getElementById('copyright').innerHTML = t.copyright;
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('active');
+    }
+
+    // language switcher event
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => setLanguage(e.currentTarget.getAttribute('data-lang')));
+    });
+    setLanguage('en');
+
+    // form handling
+    const form = document.getElementById('contactForm');
+    const successDiv = document.getElementById('formSuccessMessage');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if(form.checkValidity()) {
+            successDiv.style.display = 'block';
+            form.reset();
+            setTimeout(() => successDiv.style.display = 'none', 4000);
+        } else form.reportValidity();
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-item').forEach(item => {
+        const q = item.querySelector('.faq-question');
+        q.addEventListener('click', () => {
+            item.classList.toggle('active');
+        });
+    });
+
+    // mobile & scroll
+    const navbar = document.getElementById('navbar');
+    const backBtn = document.getElementById('backToTop');
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 50) navbar.classList.add('scrolled');
+        else navbar.classList.remove('scrolled');
+        if(window.scrollY > 500) backBtn.classList.add('show');
+        else backBtn.classList.remove('show');
+    });
+    backBtn.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'}); });
+    mobileToggle.addEventListener('click', () => { navMenu.classList.toggle('active'); mobileToggle.innerHTML = navMenu.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>'; });
+    document.querySelectorAll('.nav-menu a').forEach(l => l.addEventListener('click', () => { navMenu.classList.remove('active'); mobileToggle.innerHTML = '<i class="fas fa-bars"></i>'; }));
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const hash = this.getAttribute('href');
+            if(hash === '#') return;
+            const target = document.querySelector(hash);
+            if(target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        });
+    });
+</script>
+</body>
+</html>
