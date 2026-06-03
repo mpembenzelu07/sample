@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>CAVITRD | Transforming Lives – Hope, Healing & Happiness</title>
+    <meta name="description" content="CAVITRD is a registered Tanzanian NGO bringing compassionate care, surgical outreach, and vision support to children & adults. Join us to create lasting happiness.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0f3b2c;
+            --primary-dark: #0a2a1f;
+            --primary-light: #2a9d6e;
+            --secondary: #e9b35f;
+            --secondary-dark: #d49a3a;
+            --accent: #f25e5e;
+            --light-bg: #fefcf5;
+            --white: #ffffff;
+            --dark: #1e2a2e;
+            --text-muted: #4a5b5e;
+            --shadow-sm: 0 12px 28px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 35px 50px -20px rgba(0, 0, 0, 0.2);
+            --gradient-warm: linear-gradient(125deg, #fdf8ed 0%, #fff8e7 100%);
+            --gradient-hero: linear-gradient(105deg, #0f3b2cbb 0%, #1e7b56bb 100%), url('https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=2032&auto=format');
+            --radius-xl: 2rem;
+            --radius-lg: 1.5rem;
+            --radius-md: 1rem;
+            --transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark);
+            line-height: 1.5;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* premium nav */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 253, 245, 0.96);
+            backdrop-filter: blur(16px);
+            z-index: 1000;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            padding: 0.9rem 0;
+        }
+
+        .navbar.scrolled {
+            padding: 0.6rem 0;
+            box-shadow: var(--shadow-sm);
+            background: rgba(255, 253, 245, 0.98);
+        }
+
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            background: var(--primary);
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            color: white;
+            font-size: 1.8rem;
+            transition: var(--transition);
+            box-shadow: 0 6px 14px rgba(15, 59, 44, 0.2);
+        }
+
+        .logo-text h1 {
+            font-size: 1.7rem;
+            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            letter-spacing: -0.3px;
+        }
+
+        .logo-text span {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--secondary-dark);
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2.2rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--dark);
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-light);
+        }
+
+        .lang-group {
+            display: flex;
+            gap: 0.5rem;
+            background: #eef3f0;
+            padding: 0.3rem;
+            border-radius: 3rem;
+            margin-left: 1rem;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.8rem;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(115deg, #0f3b2cd9 0%, #137a54d1 100%), url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=2070&auto=format');
+            background-size: cover;
+            background-position: center 30%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 90px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-badge {
+            background: rgba(255,255,240,0.2);
+            backdrop-filter: blur(8px);
+            display: inline-flex;
+            gap: 0.6rem;
+            padding: 0.5rem 1.6rem;
+            border-radius: 60px;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .hero h1 {
+            font-size: 4.2rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: var(--transition);
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--dark);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+        }
+
+        .btn-primary:hover {
+            background: #f0b551;
+            transform: translateY(-5px);
+            box-shadow: 0 18px 28px -8px rgba(0,0,0,0.2);
+        }
+
+        .btn-outline-light {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline-light:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-number {
+            font-size: 3.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #FFE6B0, #FFC857);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1;
+        }
+
+        /* sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.7rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .section-sub {
+            text-align: center;
+            color: var(--text-muted);
+            max-width: 680px;
+            margin: 0 auto 3rem auto;
+            font-size: 1.1rem;
+        }
+
+        /* About grid */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 2rem;
+            box-shadow: var(--shadow-xl);
+            transition: transform 0.4s;
+        }
+
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 1.2rem 1.8rem;
+            border-radius: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border-left: 5px solid var(--secondary);
+        }
+
+        /* mission cards */
+        .mission-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .mission-card {
+            background: white;
+            padding: 2.2rem;
+            border-radius: 1.8rem;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .mission-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .mission-icon {
+            background: var(--primary-light);
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        /* values */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            background: white;
+            border-radius: 1.8rem;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background: #fef3e2;
+            display: flex;
+            margin: 0 auto 1rem;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            font-size: 2rem;
+            color: var(--secondary-dark);
+        }
+
+        /* testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testi-card {
+            background: white;
+            border-radius: 1.8rem;
+            padding: 1.8rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .testi-card i.fa-quote-left {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            opacity: 0.4;
+            margin-bottom: 1rem;
+        }
+
+        .testi-text {
+            font-style: italic;
+            margin-bottom: 1.2rem;
+        }
+
+        .testi-name {
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        /* CTA */
+        .cta-block {
+            background: linear-gradient(115deg, #0f3b2c, #1e7b56);
+            border-radius: 2.5rem;
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-block h2 {
+            font-size: 2.8rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+
+        /* footer */
+        footer {
+            background: #0e2a21;
+            color: #ddd;
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .footer-links a {
+            color: #cfdec9;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
+            transition: 0.2s;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            background: rgba(255,255,245,0.1);
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--secondary);
+            width: 48px;
+            height: 48px;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-size: 1.4rem;
+            box-shadow: var(--shadow-md);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s;
+            z-index: 99;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                background: white;
+                width: 80%;
+                height: calc(100vh - 80px);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 2rem;
+                transition: 0.3s;
+                box-shadow: 5px 0 20px rgba(0,0,0,0.1);
+                display: flex !important;
+                z-index: 999;
+            }
+            .nav-menu.active {
+                left: 0;
+            }
+            .mobile-toggle {
+                display: block;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-stats {
+                gap: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+    <div class="container nav-flex">
+        <a href="#" class="logo">
+            <div class="logo-icon"><i class="fas fa-hands-helping"></i></div>
+            <div class="logo-text">
+                <h1>CAVITRD</h1>
+                <span>Reg. 14NGO/R/4896</span>
+            </div>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#home" class="active nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#mission" class="nav-link">Mission</a></li>
+            <li><a href="#values" class="nav-link">Values</a></li>
+            <li><a href="#testimonials" class="nav-link">Stories</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <div class="lang-group">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="sw">SW</button>
+            </div>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <!-- Hero section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge" id="heroBadge"><i class="fas fa-leaf"></i> <span>Hope in Action</span></div>
+                <h1 id="heroTitle">Healing Hands, Happy Hearts</h1>
+                <p id="heroText">CAVITRD brings life-changing surgeries, vision care, and community education to Tanzania’s Lake Zone. Every smile restored is a victory of compassion.</p>
+                <div class="btn-group">
+                    <a href="#contact" class="btn btn-primary" id="donateBtn"><i class="fas fa-hand-holding-heart"></i> <span>Support a Life</span></a>
+                    <a href="#contact" class="btn btn-outline-light" id="volunteerBtn"><i class="fas fa-user-plus"></i> <span>Volunteer</span></a>
+                </div>
+                <div class="hero-stats">
+                    <div><div class="stat-number" data-count="1850">0</div><div id="stat1Label">Surgeries</div></div>
+                    <div><div class="stat-number" data-count="62">0</div><div id="stat2Label">Communities</div></div>
+                    <div><div class="stat-number" data-count="7200">0</div><div id="stat3Label">Lives touched</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title" id="aboutTitle">With Compassion, We Rise</h2>
+            <p class="section-sub" id="aboutSub">Bringing expert care to rural Tanzania since 2017.</p>
+            <div class="about-grid">
+                <div class="about-img"><img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=2028&auto=format" alt="Happy children and medical team" loading="lazy"></div>
+                <div><p id="aboutDesc"><strong>CAVITRD (Registration No. 14NGO/R/4896)</strong> is dedicated to children and adults facing congenital anomalies, vision loss, and trauma-related disabilities. Through surgical camps and awareness, we bring hope to remote villages in the Lake Zone.</p>
+                <div class="feature-list">
+                    <div class="feature-item"><i class="fas fa-procedures" style="color:var(--secondary); margin-right: 12px;"></i> <strong id="f1Title">Mobile surgical camps</strong><br><span id="f1Text">Life-changing operations in underserved regions</span></div>
+                    <div class="feature-item"><i class="fas fa-eye" style="color:var(--secondary); margin-right: 12px;"></i> <strong id="f2Title">Vision restoration</strong><br><span id="f2Text">Screening, glasses, and specialist referrals</span></div>
+                    <div class="feature-item"><i class="fas fa-chalkboard-user" style="color:var(--secondary); margin-right: 12px;"></i> <strong id="f3Title">Preventive education</strong><br><span id="f3Text">Awareness about trauma prevention & nutrition</span></div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" style="background: #faf7f0;">
+        <div class="container">
+            <h2 class="section-title" id="missionTitle">Our Path Forward</h2>
+            <p class="section-sub" id="missionSub">Driven by purpose, guided by love</p>
+            <div class="mission-cards">
+                <div class="mission-card"><div class="mission-icon"><i class="fas fa-globe-africa"></i></div><h3 id="visionTitle">Vision</h3><p id="visionText">A world where no child suffers from treatable disabilities due to lack of access — building an inclusive Tanzania.</p></div>
+                <div class="mission-card"><div class="mission-icon"><i class="fas fa-bullhorn"></i></div><h3 id="missionCardTitle">Mission</h3><p id="missionText">Deliver sustainable, high-quality surgical & rehabilitative care to rural communities through outreach and advocacy.</p></div>
+                <div class="mission-card"><div class="mission-icon"><i class="fas fa-chart-line"></i></div><h3 id="objTitle">Core Objectives</h3><p id="objText">Raise awareness, reduce preventable disabilities, provide treatment & empower communities with knowledge.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section id="values">
+        <div class="container">
+            <h2 class="section-title" id="valuesTitle">What We Stand For</h2>
+            <div class="values-grid">
+                <div class="value-card"><div class="value-icon"><i class="fas fa-hand-sparkles"></i></div><h3 id="val1Title">Dignity</h3><p id="val1Text">Every person deserves respectful, empathetic care.</p></div>
+                <div class="value-card"><div class="value-icon"><i class="fas fa-scale-balanced"></i></div><h3 id="val2Title">Equity</h3><p id="val2Text">Reaching the most remote without discrimination.</p></div>
+                <div class="value-card"><div class="value-icon"><i class="fas fa-heart"></i></div><h3 id="val3Title">Compassion</h3><p id="val3Text">Love in action fuels every decision.</p></div>
+                <div class="value-card"><div class="value-icon"><i class="fas fa-sun"></i></div><h3 id="val4Title">Transparency</h3><p id="val4Text">Open reporting, accountable stewardship.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials - joy & happiness -->
+    <section id="testimonials" style="background: #fff7ef;">
+        <div class="container">
+            <h2 class="section-title" id="testiTitle">Voices of Happiness</h2>
+            <p class="section-sub" id="testiSub">Real stories from families who found new hope.</p>
+            <div class="testimonials-grid" id="testimonialsGrid">
+                <!-- dynamic via js but static prefill for both languages -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Action -->
+    <section>
+        <div class="container">
+            <div class="cta-block">
+                <h2 id="ctaHeadline">Let's spread happiness together</h2>
+                <p id="ctaDesc" style="font-size:1.15rem; margin-bottom:2rem;">Your donation or partnership transforms countless futures.</p>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-primary" id="ctaDonateBtn"><i class="fas fa-donate"></i> Donate now</a>
+                    <a href="#" class="btn btn-outline-light" id="ctaPartnerBtn">Partner with us →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer id="contact">
+    <div class="container">
+        <div class="footer-grid">
+            <div><h3 style="color:white;">CAVITRD</h3><p id="footerAbout">Registered NGO (14NGO/R/4896) serving Lake Zone, Tanzania: surgical, eye care & disability support.</p><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div>
+            <div><h4 id="quickTitle">Quick Links</h4><div class="footer-links"><a href="#home">🏠 Home</a><a href="#about">📖 About</a><a href="#mission">🎯 Mission</a><a href="#testimonials">⭐ Stories</a></div></div>
+            <div><h4 id="contactTitleFooter">Contact</h4><div class="footer-links"><a><i class="fas fa-map-marker-alt"></i> <span id="contactAddr">Mwanza, Tanzania</span></a><a><i class="fas fa-phone-alt"></i> <span id="contactPhone">+255 718 851 139</span></a><a><i class="fas fa-envelope"></i> <span id="contactEmail">info@cavitrd.org</span></a><a><i class="fas fa-id-card"></i> <span id="contactReg">Reg: 14NGO/R/4896</span></a></div></div>
+            <div><h4 id="supportTitle">Get Involved</h4><p id="supportText">Volunteer, donate or partner to create lasting joy.</p><div style="margin-top:1rem;"><a href="#" class="btn btn-primary" style="padding:0.6rem 1.2rem; font-size:0.8rem;">Become a supporter</a></div></div>
+        </div>
+        <div style="border-top:1px solid #2f5544; padding-top:1.5rem; text-align:center; font-size:0.8rem;" id="copyright">© 2026 CAVITRD — Transforming lives with love & hope. All rights reserved.</div>
+    </div>
+</footer>
+
+<a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+<script>
+    // ---------- Translations ----------
+    const translations = {
+        en: {
+            heroBadge: '<i class="fas fa-leaf"></i> Hope in Action',
+            heroTitle: 'Healing Hands, Happy Hearts',
+            heroText: 'CAVITRD brings life-changing surgeries, vision care, and community education to Tanzania’s Lake Zone. Every smile restored is a victory of compassion.',
+            stat1Label: 'Surgeries',
+            stat2Label: 'Communities',
+            stat3Label: 'Lives touched',
+            aboutTitle: 'With Compassion, We Rise',
+            aboutSub: 'Bringing expert care to rural Tanzania since 2017.',
+            aboutDesc: '<strong>CAVITRD (Registration No. 14NGO/R/4896)</strong> is dedicated to children and adults facing congenital anomalies, vision loss, and trauma-related disabilities. Through surgical camps and awareness, we bring hope to remote villages in the Lake Zone.',
+            f1Title: 'Mobile surgical camps', f1Text: 'Life-changing operations in underserved regions',
+            f2Title: 'Vision restoration', f2Text: 'Screening, glasses, and specialist referrals',
+            f3Title: 'Preventive education', f3Text: 'Awareness about trauma prevention & nutrition',
+            missionTitle: 'Our Path Forward', missionSub: 'Driven by purpose, guided by love',
+            visionTitle: 'Vision', visionText: 'A world where no child suffers from treatable disabilities due to lack of access — building an inclusive Tanzania.',
+            missionCardTitle: 'Mission', missionText: 'Deliver sustainable, high-quality surgical & rehabilitative care to rural communities through outreach and advocacy.',
+            objTitle: 'Core Objectives', objText: 'Raise awareness, reduce preventable disabilities, provide treatment & empower communities with knowledge.',
+            valuesTitle: 'What We Stand For',
+            val1Title: 'Dignity', val1Text: 'Every person deserves respectful, empathetic care.',
+            val2Title: 'Equity', val2Text: 'Reaching the most remote without discrimination.',
+            val3Title: 'Compassion', val3Text: 'Love in action fuels every decision.',
+            val4Title: 'Transparency', val4Text: 'Open reporting, accountable stewardship.',
+            testiTitle: 'Voices of Happiness', testiSub: 'Real stories from families who found new hope.',
+            testimonials: [
+                { quote: '“My daughter’s surgery was a miracle. Now she runs and plays with other kids. Thank you CAVITRD!”', name: '— Neema, Mother from Mwanza' },
+                { quote: '“After losing my sight, I thought life was over. The eye camp gave me back my vision. I can weave baskets again!”', name: '— Asha, Grandmother' },
+                { quote: '“The community training taught us how to prevent accidents at home. Our village is safer and happier.”', name: '— Juma, Village elder' }
+            ],
+            ctaHeadline: "Let's spread happiness together",
+            ctaDesc: "Your donation or partnership transforms countless futures.",
+            footerAbout: "Registered NGO (14NGO/R/4896) serving Lake Zone, Tanzania: surgical, eye care & disability support.",
+            quickTitle: "Quick Links", contactTitleFooter: "Contact", supportTitle: "Get Involved", supportText: "Volunteer, donate or partner to create lasting joy.",
+            contactAddr: "Mwanza, Tanzania", contactPhone: "+255 718 851 139", contactEmail: "info@cavitrd.org", contactReg: "Reg: 14NGO/R/4896",
+            copyright: "© 2026 CAVITRD — Transforming lives with love & hope. All rights reserved."
+        },
+        sw: {
+            heroBadge: '<i class="fas fa-leaf"></i> Matumaini katika Hatua',
+            heroTitle: 'Mikono ya Uponyaji, Mioyo Yenye Furaha',
+            heroText: 'CAVITRD inatoa upasuaji unaobadilisha maisha, huduma za macho na elimu kwa jamii za Mkoa wa Ziwa Tanzania. Kila tabasamu lililorejeshwa ni ushindi wa huruma.',
+            stat1Label: 'Upasuaji', stat2Label: 'Jamii', stat3Label: 'Maisha yaliyobadilishwa',
+            aboutTitle: 'Kwa Huruma, Tunainuka',
+            aboutSub: 'Kutoa huduma maalumu vijijini Tanzania tangu 2017.',
+            aboutDesc: '<strong>CAVITRD (Namba ya Usajili 14NGO/R/4896)</strong> imejitolea kusaidia watoto na watu wazima wenye kasoro za kuzaliwa, upofu, na ulemavu wa kiwewe. Kupitia kambi za upasuaji na uhamasishaji tunaleta matumaini vijijini Mkoani Ziwa.',
+            f1Title: 'Kambi za upasuaji', f1Text: 'Upasuaji unaobadilisha maisha maeneo ya vijijini',
+            f2Title: 'Kurejesha uwezo wa kuona', f2Text: 'Uchunguzi, miwani, rufaa za wataalam',
+            f3Title: 'Elimu ya kuzuia', f3Text: 'Uhamasishaji wa kinga ya ajali na lishe',
+            missionTitle: 'Mwendo Wetu', missionSub: 'Tunaongozwa na dhamira na upendo',
+            visionTitle: 'Dira', visionText: 'Dunia ambapo hakuna mtoto ana teseka kutokana na ulemavu unaoweza kuzuilika — kujenga Tanzania inayojumuisha.',
+            missionCardTitle: 'Dhamira', missionText: 'Kutoa huduma bora za upasuaji na urekebishaji kwa jamii za vijijini kupitia ufikiaji na utetezi.',
+            objTitle: 'Malengo ya Msingi', objText: 'Kuongeza ufahamu, kupunguza ulemavu unaoweza kuepukika, kutoa matibabu na kuwawezesha jamii kwa elimu.',
+            valuesTitle: 'Kanuni Zetu',
+            val1Title: 'Heshima', val1Text: 'Kila mtu anastahili heshima na huruma.',
+            val2Title: 'Usawa', val2Text: 'Kuwafikia wote bila ubaguzi.',
+            val3Title: 'Huruma', val3Text: 'Upendo katika vitendo ndio msingi.',
+            val4Title: 'Uwazi', val4Text: 'Uwajibikaji kamili na uwazi.',
+            testiTitle: 'Sauti za Furaha', testiSub: 'Hadithi za kweli za familia zilizopata matumaini mapya.',
+            testimonials: [
+                { quote: '“Upasuaji wa binti yangu ulikuwa muujiza. Sasa anakimbia na kucheza na watoto wengine. Asante CAVITRD!”', name: '— Neema, Mama Mwanza' },
+                { quote: '“Nilipopoteza uwezo wa kuona, nilifikiri maisha imekwisha. Kambi ya macho ilinirudishia macho. Ninaweza kusuka tena!”', name: '— Asha, Bibi' },
+                { quote: '“Mafunzo ya jamii yalitufundisha kuzuia ajali nyumbani. Kijiji chetu kiko salama na chenye furaha.”', name: '— Juma, Mzee wa kijiji' }
+            ],
+            ctaHeadline: "Tueneze furaha pamoja",
+            ctaDesc: "Mchango wako unaboresha maisha mengi.",
+            footerAbout: "AS iliyosajiliwa (14NGO/R/4896) inayohudumu Mkoa wa Ziwa: upasuaji, macho na ulemavu.",
+            quickTitle: "Viungo", contactTitleFooter: "Wasiliana nasi", supportTitle: "Jiunge nasi", supportText: "Jitolee, changia au shirikiana kuleta furaha.",
+            contactAddr: "Mwanza, Tanzania", contactPhone: "+255 718 851 139", contactEmail: "info@cavitrd.org", contactReg: "Usajili: 14NGO/R/4896",
+            copyright: "© 2026 CAVITRD — Kubadilisha maisha kwa upendo. Haki zote zimehifadhiwa."
+        }
+    };
+    
+    function setLanguage(lang) {
+        const t = translations[lang];
+        document.getElementById('heroBadge').innerHTML = t.heroBadge;
+        document.getElementById('heroTitle').innerText = t.heroTitle;
+        document.getElementById('heroText').innerText = t.heroText;
+        document.getElementById('stat1Label').innerText = t.stat1Label;
+        document.getElementById('stat2Label').innerText = t.stat2Label;
+        document.getElementById('stat3Label').innerText = t.stat3Label;
+        document.getElementById('aboutTitle').innerText = t.aboutTitle;
+        document.getElementById('aboutSub').innerText = t.aboutSub;
+        document.getElementById('aboutDesc').innerHTML = t.aboutDesc;
+        document.getElementById('f1Title').innerText = t.f1Title;
+        document.getElementById('f1Text').innerText = t.f1Text;
+        document.getElementById('f2Title').innerText = t.f2Title;
+        document.getElementById('f2Text').innerText = t.f2Text;
+        document.getElementById('f3Title').innerText = t.f3Title;
+        document.getElementById('f3Text').innerText = t.f3Text;
+        document.getElementById('missionTitle').innerText = t.missionTitle;
+        document.getElementById('missionSub').innerText = t.missionSub;
+        document.getElementById('visionTitle').innerText = t.visionTitle;
+        document.getElementById('visionText').innerText = t.visionText;
+        document.getElementById('missionCardTitle').innerText = t.missionCardTitle;
+        document.getElementById('missionText').innerText = t.missionText;
+        document.getElementById('objTitle').innerText = t.objTitle;
+        document.getElementById('objText').innerText = t.objText;
+        document.getElementById('valuesTitle').innerText = t.valuesTitle;
+        document.getElementById('val1Title').innerText = t.val1Title; document.getElementById('val1Text').innerText = t.val1Text;
+        document.getElementById('val2Title').innerText = t.val2Title; document.getElementById('val2Text').innerText = t.val2Text;
+        document.getElementById('val3Title').innerText = t.val3Title; document.getElementById('val3Text').innerText = t.val3Text;
+        document.getElementById('val4Title').innerText = t.val4Title; document.getElementById('val4Text').innerText = t.val4Text;
+        document.getElementById('testiTitle').innerText = t.testiTitle;
+        document.getElementById('testiSub').innerText = t.testiSub;
+        document.getElementById('ctaHeadline').innerText = t.ctaHeadline;
+        document.getElementById('ctaDesc').innerText = t.ctaDesc;
+        document.getElementById('footerAbout').innerText = t.footerAbout;
+        document.getElementById('quickTitle').innerText = t.quickTitle;
+        document.getElementById('contactTitleFooter').innerText = t.contactTitleFooter;
+        document.getElementById('supportTitle').innerText = t.supportTitle;
+        document.getElementById('supportText').innerText = t.supportText;
+        document.getElementById('contactAddr').innerText = t.contactAddr;
+        document.getElementById('contactPhone').innerText = t.contactPhone;
+        document.getElementById('contactEmail').innerText = t.contactEmail;
+        document.getElementById('contactReg').innerText = t.contactReg;
+        document.getElementById('copyright').innerHTML = t.copyright;
+        
+        const testimonialsGrid = document.getElementById('testimonialsGrid');
+        testimonialsGrid.innerHTML = t.testimonials.map(tm => `
+            <div class="testi-card">
+                <i class="fas fa-quote-left"></i>
+                <div class="testi-text">${tm.quote}</div>
+                <div class="testi-name">${tm.name}</div>
+                <div style="margin-top: 0.8rem; color: #e9b35f;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            </div>
+        `).join('');
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('active');
+    }
+    
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const lang = e.currentTarget.getAttribute('data-lang');
+            setLanguage(lang);
+        });
+    });
+    setLanguage('en');
+    
+    // counter animation
+    const counters = document.querySelectorAll('.stat-number');
+    let counted = false;
+    function startCounters() {
+        if(counted) return;
+        counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-count'));
+            let current = 0;
+            const increment = target / 55;
+            const update = () => {
+                current += increment;
+                if(current < target) {
+                    counter.innerText = Math.floor(current).toLocaleString();
+                    requestAnimationFrame(update);
+                } else {
+                    counter.innerText = target.toLocaleString();
+                }
+            };
+            update();
+        });
+        counted = true;
+    }
+    const heroSection = document.querySelector('.hero');
+    const observerCount = new IntersectionObserver((entries) => {
+        if(entries[0].isIntersecting && !counted) startCounters();
+    }, { threshold: 0.3 });
+    observerCount.observe(heroSection);
+    
+    // nav scroll effect, back to top, mobile toggle
+    const navbar = document.getElementById('navbar');
+    const backBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 50) navbar.classList.add('scrolled');
+        else navbar.classList.remove('scrolled');
+        if(window.scrollY > 500) backBtn.classList.add('show');
+        else backBtn.classList.remove('show');
+    });
+    backBtn.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'}); });
+    
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+    mobileToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        mobileToggle.innerHTML = navMenu.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+    });
+    
+    // smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const hash = this.getAttribute('href');
+            if(hash === '#') return;
+            const target = document.querySelector(hash);
+            if(target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        });
+    });
+    // manual init for active nav highlight on scroll
+    const sections = document.querySelectorAll('section, .hero');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const top = section.offsetTop - 150;
+            if(pageYOffset >= top) current = section.getAttribute('id');
+        });
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+            if(link.getAttribute('href') === `#${current}`) link.classList.add('active');
+        });
+    });
+</script>
+</body>
+</html>
