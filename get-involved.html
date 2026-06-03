@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Get Involved | CAVITRD – Be the Change, Spread Joy</title>
+    <meta name="description" content="Join CAVITRD as a volunteer, partner, or donor. Together we bring life-changing care and happiness to the Lake Zone, Tanzania.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0f3b2c;
+            --primary-dark: #0a2a1f;
+            --primary-light: #2a9d6e;
+            --secondary: #e9b35f;
+            --secondary-dark: #d49a3a;
+            --accent: #f25e5e;
+            --light-bg: #fefcf5;
+            --white: #ffffff;
+            --dark: #1e2a2e;
+            --text-muted: #4a5b5e;
+            --shadow-sm: 0 12px 28px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 35px 50px -20px rgba(0, 0, 0, 0.2);
+            --radius-xl: 2rem;
+            --radius-lg: 1.5rem;
+            --radius-md: 1rem;
+            --transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark);
+            line-height: 1.5;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 253, 245, 0.96);
+            backdrop-filter: blur(16px);
+            z-index: 1000;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            padding: 0.9rem 0;
+        }
+
+        .navbar.scrolled {
+            padding: 0.6rem 0;
+            box-shadow: var(--shadow-sm);
+            background: rgba(255, 253, 245, 0.98);
+        }
+
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            background: var(--primary);
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            color: white;
+            font-size: 1.8rem;
+            transition: var(--transition);
+            box-shadow: 0 6px 14px rgba(15, 59, 44, 0.2);
+        }
+
+        .logo-text h1 {
+            font-size: 1.7rem;
+            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            letter-spacing: -0.3px;
+        }
+
+        .logo-text span {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--secondary-dark);
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2.2rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--dark);
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-light);
+        }
+
+        .lang-group {
+            display: flex;
+            gap: 0.5rem;
+            background: #eef3f0;
+            padding: 0.3rem;
+            border-radius: 3rem;
+            margin-left: 1rem;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.8rem;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* page hero */
+        .page-hero {
+            min-height: 65vh;
+            background: linear-gradient(105deg, #0f3b2ccc 0%, #1e7b56cc 100%), url('https://images.unsplash.com/photo-1559027615-5d4b47d4f7f2?q=80&w=2070&auto=format');
+            background-size: cover;
+            background-position: center 30%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 90px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: var(--transition);
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--dark);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+        }
+
+        .btn-primary:hover {
+            background: #f0b551;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline-light {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline-light:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.7rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        /* involvement grid */
+        .involvement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .involve-card {
+            background: white;
+            border-radius: 2rem;
+            padding: 2rem 1.8rem;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .involve-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .involve-icon {
+            background: var(--primary-light);
+            width: 80px;
+            height: 80px;
+            display: flex;
+            margin: 0 auto 1.2rem;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            font-size: 2rem;
+            color: white;
+        }
+
+        /* forms row */
+        .forms-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .form-card {
+            background: white;
+            border-radius: 2rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: var(--primary);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: 0.2s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--primary-light);
+            outline: none;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 1rem;
+            margin-top: 1rem;
+            text-align: center;
+            display: none;
+        }
+
+        .impact-numbers {
+            background: linear-gradient(115deg, #fef7e6, #fff2df);
+            border-radius: 2rem;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .stats-inline {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-big {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        footer {
+            background: #0e2a21;
+            color: #ddd;
+            padding: 3rem 0 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: #cfdec9;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            background: rgba(255,255,245,0.1);
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--secondary);
+            width: 48px;
+            height: 48px;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-size: 1.4rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s;
+            z-index: 99;
+            text-decoration: none;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                background: white;
+                width: 80%;
+                height: calc(100vh - 80px);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 2rem;
+                transition: 0.3s;
+                box-shadow: 5px 0 20px rgba(0,0,0,0.1);
+                display: flex !important;
+                z-index: 999;
+            }
+            .nav-menu.active { left: 0; }
+            .mobile-toggle { display: block; }
+            .forms-row { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .hero-content h1 { font-size: 2.5rem; }
+        }
+        @media (max-width: 640px) {
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+    <div class="container nav-flex">
+        <a href="index.html" class="logo">
+            <div class="logo-icon"><i class="fas fa-hands-helping"></i></div>
+            <div class="logo-text">
+                <h1>CAVITRD</h1>
+                <span>Reg. 14NGO/R/4896</span>
+            </div>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="projects.html">What We Do</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="get-involved.html" class="active">Get Involved</a></li>
+            <div class="lang-group">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="sw">SW</button>
+            </div>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="page-hero">
+        <div class="container hero-content">
+            <h1 id="heroTitle">Your Kindness Creates Smiles</h1>
+            <p id="heroText">Join the CAVITRD family — volunteer, partner, or donate. Together we bring healing and happiness to thousands of families in the Lake Zone.</p>
+            <a href="#volunteer-form" class="btn btn-primary"><i class="fas fa-heart"></i> <span id="heroBtn">Take action now</span></a>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- involvement options cards -->
+        <div class="involvement-grid">
+            <div class="involve-card"><div class="involve-icon"><i class="fas fa-hands-helping"></i></div><h3 id="volTitle">Become a Volunteer</h3><p id="volDesc">Join outreach camps, community education, or admin support. No matter your skill, your time transforms lives.</p></div>
+            <div class="involve-card"><div class="involve-icon"><i class="fas fa-handshake"></i></div><h3 id="partnerTitle">Partner With Us</h3><p id="partnerDesc">Collaborate with CAVITRD to expand surgical camps, vision programs, and advocacy — together we reach further.</p></div>
+            <div class="involve-card"><div class="involve-icon"><i class="fas fa-donate"></i></div><h3 id="donateTitle">Support Our Mission</h3><p id="donateDesc">Every contribution funds life-changing surgeries, eye care, and prevention education. Donate money or assistive devices.</p></div>
+        </div>
+
+        <!-- impact stats -->
+        <div class="impact-numbers">
+            <div class="stats-inline">
+                <div><div class="stat-big" data-count="1870">0</div><div id="statSurgLabel">surgeries funded</div></div>
+                <div><div class="stat-big" data-count="142">0</div><div id="statVolLabel">active volunteers</div></div>
+                <div><div class="stat-big" data-count="52">0</div><div id="statPartnerLabel">community partners</div></div>
+            </div>
+        </div>
+
+        <!-- Volunteer & Partner forms -->
+        <div class="forms-row" id="volunteer-form">
+            <!-- Volunteer Form -->
+            <div class="form-card">
+                <h2 style="color:var(--primary);" id="volFormTitle">✋ Volunteer with us</h2>
+                <form id="volunteerForm">
+                    <div class="form-group"><label id="volNameLabel">Full name *</label><input type="text" id="volName" required></div>
+                    <div class="form-group"><label id="volEmailLabel">Email *</label><input type="email" id="volEmail" required></div>
+                    <div class="form-group"><label id="volPhoneLabel">Phone</label><input type="tel" id="volPhone"></div>
+                    <div class="form-group"><label id="volInterestLabel">Area of interest</label><select id="volInterest"><option value="medical">Medical / Surgical</option><option value="education">Community education</option><option value="admin">Administration</option><option value="outreach">Field outreach</option></select></div>
+                    <div class="form-group"><label id="volMsgLabel">Why would you like to help?</label><textarea rows="2" id="volMsg"></textarea></div>
+                    <button type="submit" class="btn btn-primary" style="width:100%;" id="volSubmitBtn">Send volunteer request</button>
+                    <div id="volSuccess" class="success-message">🎉 Thank you! We’ll contact you soon.</div>
+                </form>
+            </div>
+            <!-- Partnership Form -->
+            <div class="form-card">
+                <h2 style="color:var(--primary);" id="partnerFormTitle">🤝 Partner with CAVITRD</h2>
+                <form id="partnerForm">
+                    <div class="form-group"><label id="partnerOrgLabel">Organization name *</label><input type="text" id="partnerOrg" required></div>
+                    <div class="form-group"><label id="partnerNameLabel">Contact person *</label><input type="text" id="partnerContact" required></div>
+                    <div class="form-group"><label id="partnerEmailLabel">Email *</label><input type="email" id="partnerEmail" required></div>
+                    <div class="form-group"><label id="partnerTypeLabel">Partnership type</label><select id="partnerType"><option value="funding">Funding / Grants</option><option value="medical">Medical collaboration</option><option value="corporate">Corporate partnership</option><option value="ngo">NGO alliance</option></select></div>
+                    <div class="form-group"><label id="partnerMsgLabel">Message / proposal</label><textarea rows="2" id="partnerMsg"></textarea></div>
+                    <button type="submit" class="btn btn-primary" style="width:100%;" id="partnerSubmitBtn">Send partnership inquiry</button>
+                    <div id="partnerSuccess" class="success-message">✨ Thank you! We’ll reply within 3 days.</div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Support / Donation CTA -->
+        <div style="background: #e6f3ef; border-radius: 2rem; padding: 2rem; text-align: center; margin: 2rem 0;">
+            <i class="fas fa-hand-holding-heart" style="font-size: 3rem; color: var(--secondary);"></i>
+            <h3 id="donateCtaTitle">Make a Donation – Every Shilling Counts</h3>
+            <p id="donateCtaText">Your donation directly funds surgical supplies, eye screenings, and community workshops. Contact us for bank details or mobile money options.</p>
+            <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem;"><i class="fas fa-credit-card"></i> <span id="donateBtnText">Donate now</span></a>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div><h3>CAVITRD</h3><p id="footerAbout">Registered NGO (14NGO/R/4896) serving Lake Zone, Tanzania: surgical, eye care & disability support.</p><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div>
+            <div><h4 id="quickTitle">Quick Links</h4><div class="footer-links"><a href="index.html">🏠 Home</a><a href="about.html">📖 About</a><a href="team.html">👥 Our Team</a><a href="get-involved.html">🤝 Get Involved</a></div></div>
+            <div><h4 id="contactFooterTitle">Contact</h4><div class="footer-links"><a><i class="fas fa-map-marker-alt"></i> <span id="contactAddr">Mwanza, Tanzania</span></a><a><i class="fas fa-phone-alt"></i> <span id="contactPhone">+255 718 851 139</span></a><a><i class="fas fa-envelope"></i> <span id="contactEmail">info@cavitrd.org</span></a><a><i class="fas fa-id-card"></i> <span id="contactReg">Reg: 14NGO/R/4896</span></a></div></div>
+            <div><h4 id="involveFooterTitle">Join the movement</h4><p id="involveFooterText">Volunteer, donate or partner — your action brings hope.</p><div style="margin-top:1rem;"><a href="get-involved.html" class="btn btn-primary" style="padding:0.6rem 1.2rem; font-size:0.8rem;">Get involved</a></div></div>
+        </div>
+        <div style="border-top:1px solid #2f5544; padding-top:1.5rem; text-align:center; font-size:0.8rem;" id="copyright">© 2026 CAVITRD — Compassion in action. All rights reserved.</div>
+    </div>
+</footer>
+<a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+<script>
+    // Translations (EN/SW)
+    const translations = {
+        en: {
+            heroTitle: "Your Kindness Creates Smiles", heroText: "Join the CAVITRD family — volunteer, partner, or donate. Together we bring healing and happiness to thousands of families in the Lake Zone.", heroBtn: "Take action now",
+            volTitle: "Become a Volunteer", volDesc: "Join outreach camps, community education, or admin support. No matter your skill, your time transforms lives.",
+            partnerTitle: "Partner With Us", partnerDesc: "Collaborate with CAVITRD to expand surgical camps, vision programs, and advocacy — together we reach further.",
+            donateTitle: "Support Our Mission", donateDesc: "Every contribution funds life-changing surgeries, eye care, and prevention education. Donate money or assistive devices.",
+            statSurgLabel: "surgeries funded", statVolLabel: "active volunteers", statPartnerLabel: "community partners",
+            volFormTitle: "✋ Volunteer with us", volNameLabel: "Full name *", volEmailLabel: "Email *", volPhoneLabel: "Phone", volInterestLabel: "Area of interest", volMsgLabel: "Why would you like to help?", volSubmitBtn: "Send volunteer request",
+            partnerFormTitle: "🤝 Partner with CAVITRD", partnerOrgLabel: "Organization name *", partnerNameLabel: "Contact person *", partnerEmailLabel: "Email *", partnerTypeLabel: "Partnership type", partnerMsgLabel: "Message / proposal", partnerSubmitBtn: "Send partnership inquiry",
+            donateCtaTitle: "Make a Donation – Every Shilling Counts", donateCtaText: "Your donation directly funds surgical supplies, eye screenings, and community workshops. Contact us for bank details or mobile money options.", donateBtnText: "Donate now",
+            footerAbout: "Registered NGO (14NGO/R/4896) serving Lake Zone, Tanzania: surgical, eye care & disability support.", quickTitle: "Quick Links", contactFooterTitle: "Contact", involveFooterTitle: "Join the movement", involveFooterText: "Volunteer, donate or partner — your action brings hope.",
+            contactAddr: "Mwanza, Tanzania", contactPhone: "+255 718 851 139", contactEmail: "info@cavitrd.org", contactReg: "Reg: 14NGO/R/4896",
+            copyright: "© 2026 CAVITRD — Compassion in action. All rights reserved."
+        },
+        sw: {
+            heroTitle: "Wema Wako Huleta Tabasamu", heroText: "Jiunge na familia ya CAVITRD — jitolee, shirikiana, au changia. Pamoja tunaleta uponyaji na furaha kwa maelfu ya familia katika eneo la Ziwa.", heroBtn: "Chukua hatua sasa",
+            volTitle: "Jitolee", volDesc: "Jiunge na kambi za ufikiaji, elimu ya jamii, au usaidizi wa utawala. Bila kujali ujuzi wako, muda wako unaboresha maisha.",
+            partnerTitle: "Shirikiana Nasi", partnerDesc: "Shirikiana na CAVITRD kupanua kambi za upasuaji, programu za macho, na utetezi — pamoja tunafika mbali zaidi.",
+            donateTitle: "Saidia Dhamira Yetu", donateDesc: "Kila mchango unafadhili upasuaji unaobadilisha maisha, huduma za macho, na elimu ya kuzuia. Changia pesa au vifaa vya usaidizi.",
+            statSurgLabel: "upasuaji uliofadhiliwa", statVolLabel: "wajitolea wanaofanya kazi", statPartnerLabel: "washirika wa jamii",
+            volFormTitle: "✋ Jitolee nasi", volNameLabel: "Jina kamili *", volEmailLabel: "Barua pepe *", volPhoneLabel: "Simu", volInterestLabel: "Eneo la nia", volMsgLabel: "Kwa nini ungependa kusaidia?", volSubmitBtn: "Tuma ombi la kujitolea",
+            partnerFormTitle: "🤝 Shirikiana na CAVITRD", partnerOrgLabel: "Jina la shirika *", partnerNameLabel: "Mtu wa kuwasiliana *", partnerEmailLabel: "Barua pepe *", partnerTypeLabel: "Aina ya ushirikiano", partnerMsgLabel: "Ujumbe / pendekezo", partnerSubmitBtn: "Tuma ombi la ushirikiano",
+            donateCtaTitle: "Toa Mchango – Kila Shilingi Inahesabu", donateCtaText: "Mchango wako unafadhili vifaa vya upasuaji, uchunguzi wa macho, na semina za jamii. Wasiliana nasi kwa maelezo ya benki au pesa za simu.", donateBtnText: "Changia sasa",
+            footerAbout: "AS iliyosajiliwa (14NGO/R/4896) inayohudumu Mkoa wa Ziwa: upasuaji, macho na ulemavu.", quickTitle: "Viungo vya haraka", contactFooterTitle: "Wasiliana", involveFooterTitle: "Jiunge na harakati", involveFooterText: "Jitolee, changia au shirikiana — hatua yako inaleta matumaini.",
+            contactAddr: "Mwanza, Tanzania", contactPhone: "+255 718 851 139", contactEmail: "info@cavitrd.org", contactReg: "Usajili: 14NGO/R/4896",
+            copyright: "© 2026 CAVITRD — Huruma katika vitendo. Haki zote zimehifadhiwa."
+        }
+    };
+
+    function setLanguage(lang) {
+        const t = translations[lang];
+        document.getElementById('heroTitle').innerText = t.heroTitle;
+        document.getElementById('heroText').innerText = t.heroText;
+        document.getElementById('heroBtn').innerText = t.heroBtn;
+        document.getElementById('volTitle').innerText = t.volTitle;
+        document.getElementById('volDesc').innerText = t.volDesc;
+        document.getElementById('partnerTitle').innerText = t.partnerTitle;
+        document.getElementById('partnerDesc').innerText = t.partnerDesc;
+        document.getElementById('donateTitle').innerText = t.donateTitle;
+        document.getElementById('donateDesc').innerText = t.donateDesc;
+        document.getElementById('statSurgLabel').innerText = t.statSurgLabel;
+        document.getElementById('statVolLabel').innerText = t.statVolLabel;
+        document.getElementById('statPartnerLabel').innerText = t.statPartnerLabel;
+        document.getElementById('volFormTitle').innerHTML = t.volFormTitle;
+        document.getElementById('volNameLabel').innerHTML = t.volNameLabel;
+        document.getElementById('volEmailLabel').innerHTML = t.volEmailLabel;
+        document.getElementById('volPhoneLabel').innerHTML = t.volPhoneLabel;
+        document.getElementById('volInterestLabel').innerHTML = t.volInterestLabel;
+        document.getElementById('volMsgLabel').innerHTML = t.volMsgLabel;
+        document.getElementById('volSubmitBtn').innerText = t.volSubmitBtn;
+        document.getElementById('partnerFormTitle').innerHTML = t.partnerFormTitle;
+        document.getElementById('partnerOrgLabel').innerHTML = t.partnerOrgLabel;
+        document.getElementById('partnerNameLabel').innerHTML = t.partnerNameLabel;
+        document.getElementById('partnerEmailLabel').innerHTML = t.partnerEmailLabel;
+        document.getElementById('partnerTypeLabel').innerHTML = t.partnerTypeLabel;
+        document.getElementById('partnerMsgLabel').innerHTML = t.partnerMsgLabel;
+        document.getElementById('partnerSubmitBtn').innerText = t.partnerSubmitBtn;
+        document.getElementById('donateCtaTitle').innerText = t.donateCtaTitle;
+        document.getElementById('donateCtaText').innerText = t.donateCtaText;
+        document.getElementById('donateBtnText').innerText = t.donateBtnText;
+        document.getElementById('footerAbout').innerText = t.footerAbout;
+        document.getElementById('quickTitle').innerText = t.quickTitle;
+        document.getElementById('contactFooterTitle').innerText = t.contactFooterTitle;
+        document.getElementById('involveFooterTitle').innerText = t.involveFooterTitle;
+        document.getElementById('involveFooterText').innerText = t.involveFooterText;
+        document.getElementById('contactAddr').innerText = t.contactAddr;
+        document.getElementById('contactPhone').innerText = t.contactPhone;
+        document.getElementById('contactEmail').innerText = t.contactEmail;
+        document.getElementById('contactReg').innerText = t.contactReg;
+        document.getElementById('copyright').innerHTML = t.copyright;
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('active');
+    }
+
+    // counter animation
+    const counters = document.querySelectorAll('.stat-big');
+    let counted = false;
+    function startStats() {
+        if(counted) return;
+        counters.forEach(el => {
+            const target = parseInt(el.getAttribute('data-count'), 10);
+            let current = 0;
+            const step = Math.ceil(target / 45);
+            const update = () => {
+                current += step;
+                if(current < target) { el.innerText = current; requestAnimationFrame(update); }
+                else el.innerText = target;
+            };
+            update();
+        });
+        counted = true;
+    }
+    const statsObserver = new IntersectionObserver((entries) => {
+        if(entries[0].isIntersecting && !counted) startStats();
+    }, { threshold: 0.4 });
+    const impactSection = document.querySelector('.impact-numbers');
+    if(impactSection) statsObserver.observe(impactSection);
+
+    // form submission mock
+    const volForm = document.getElementById('volunteerForm');
+    const partnerForm = document.getElementById('partnerForm');
+    const volSuccess = document.getElementById('volSuccess');
+    const partnerSuccess = document.getElementById('partnerSuccess');
+
+    volForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        volSuccess.style.display = 'block';
+        volForm.reset();
+        setTimeout(() => volSuccess.style.display = 'none', 3500);
+    });
+    partnerForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        partnerSuccess.style.display = 'block';
+        partnerForm.reset();
+        setTimeout(() => partnerSuccess.style.display = 'none', 3500);
+    });
+
+    // navbar, mobile, back to top
+    const navbar = document.getElementById('navbar');
+    const backBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 50) navbar.classList.add('scrolled');
+        else navbar.classList.remove('scrolled');
+        if(window.scrollY > 500) backBtn.classList.add('show');
+        else backBtn.classList.remove('show');
+    });
+    backBtn.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'}); });
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+    mobileToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        mobileToggle.innerHTML = navMenu.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => { navMenu.classList.remove('active'); mobileToggle.innerHTML = '<i class="fas fa-bars"></i>'; });
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => setLanguage(e.currentTarget.getAttribute('data-lang')));
+    });
+    setLanguage('en');
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const hash = this.getAttribute('href');
+            if(hash === '#') return;
+            const target = document.querySelector(hash);
+            if(target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        });
+    });
+</script>
+</body>
+</html>
