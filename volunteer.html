@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Volunteer | CAVITRD – Medical & Community Opportunities</title>
+    <meta name="description" content="Join CAVITRD as a medical volunteer. Surgeons, nurses, therapists — your skills can transform lives across Tanzania's Lake Zone.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0f3b2c;
+            --primary-dark: #0a2a1f;
+            --primary-light: #2a9d6e;
+            --secondary: #e9b35f;
+            --secondary-dark: #d49a3a;
+            --accent: #f25e5e;
+            --light-bg: #fefcf5;
+            --white: #ffffff;
+            --dark: #1e2a2e;
+            --text-muted: #4a5b5e;
+            --shadow-sm: 0 12px 28px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 35px 50px -20px rgba(0, 0, 0, 0.2);
+            --radius-xl: 2rem;
+            --radius-lg: 1.5rem;
+            --radius-md: 1rem;
+            --transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark);
+            line-height: 1.5;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 253, 245, 0.96);
+            backdrop-filter: blur(16px);
+            z-index: 1000;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            padding: 0.9rem 0;
+        }
+
+        .navbar.scrolled {
+            padding: 0.6rem 0;
+            box-shadow: var(--shadow-sm);
+            background: rgba(255, 253, 245, 0.98);
+        }
+
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            background: var(--primary);
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            color: white;
+            font-size: 1.8rem;
+            transition: var(--transition);
+            box-shadow: 0 6px 14px rgba(15, 59, 44, 0.2);
+        }
+
+        .logo-text h1 {
+            font-size: 1.7rem;
+            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            letter-spacing: -0.3px;
+        }
+
+        .logo-text span {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--secondary-dark);
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2.2rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--dark);
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-light);
+        }
+
+        .lang-group {
+            display: flex;
+            gap: 0.5rem;
+            background: #eef3f0;
+            padding: 0.3rem;
+            border-radius: 3rem;
+            margin-left: 1rem;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.8rem;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* page hero */
+        .page-hero {
+            min-height: 55vh;
+            background: linear-gradient(105deg, #0f3b2ccc 0%, #1e7b56cc 100%), url('https://images.unsplash.com/photo-1559027615-5d4b47d4f7f2?q=80&w=2070&auto=format');
+            background-size: cover;
+            background-position: center 30%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 90px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: var(--transition);
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--dark);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+        }
+
+        .btn-primary:hover {
+            background: #f0b551;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline-light {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        /* benefits grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .benefit-card {
+            background: white;
+            border-radius: 1.8rem;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .benefit-icon {
+            background: var(--primary-light);
+            width: 70px;
+            height: 70px;
+            display: flex;
+            margin: 0 auto 1rem;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            font-size: 2rem;
+            color: white;
+        }
+
+        /* form */
+        .form-card {
+            background: white;
+            border-radius: 2rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            margin: 2rem 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 1.2rem;
+            font-family: 'Inter', sans-serif;
+            transition: 0.2s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--primary-light);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(42,157,110,0.2);
+        }
+
+        /* stats */
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        footer {
+            background: #0e2a21;
+            color: #ddd;
+            padding: 3rem 0 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: #cfdec9;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            background: rgba(255,255,245,0.1);
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--secondary);
+            width: 48px;
+            height: 48px;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-size: 1.4rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s;
+            z-index: 99;
+            text-decoration: none;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                background: white;
+                width: 80%;
+                height: calc(100vh - 80px);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 2rem;
+                transition: 0.3s;
+                box-shadow: 5px 0 20px rgba(0,0,0,0.1);
+                display: flex !important;
+                z-index: 999;
+            }
+            .nav-menu.active { left: 0; }
+            .mobile-toggle { display: block; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .hero-content h1 { font-size: 2.2rem; }
+        }
+
+        @media (max-width: 640px) {
+            .footer-grid { grid-template-columns: 1fr; }
+            .stats-row { gap: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+    <div class="container nav-flex">
+        <a href="index.html" class="logo">
+            <div class="logo-icon"><i class="fas fa-hands-helping"></i></div>
+            <div class="logo-text">
+                <h1>CAVITRD</h1>
+                <span>Reg. 14NGO/R/4896</span>
+            </div>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="projects.html">What We Do</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="get-involved.html">Get Involved</a></li>
+            <li><a href="volunteers.html" class="active">Volunteer</a></li>
+            <div class="lang-group">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="sw">SW</button>
+            </div>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="page-hero">
+        <div class="container hero-content">
+            <h1 id="heroTitle">Join Our Medical Volunteer Team</h1>
+            <p id="heroText">Your skills can restore smiles, mobility, and hope. CAVITRD welcomes doctors, nurses, therapists, and health professionals to serve communities in Tanzania's Lake Zone.</p>
+            <a href="#volunteer-form" class="btn btn-primary"><i class="fas fa-heartbeat"></i> <span id="heroBtn">Apply now</span></a>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- benefits -->
+        <div class="benefits-grid">
+            <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-stethoscope"></i></div><h3 id="benefit1Title">Hands‑On Impact</h3><p id="benefit1Text">Perform life-changing surgeries, lead vision camps, or train local health workers in remote communities.</p></div>
+            <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-globe-africa"></i></div><h3 id="benefit2Title">Cultural Immersion</h3><p id="benefit2Text">Experience the warmth of Tanzanian communities while sharing your expertise in a meaningful way.</p></div>
+            <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-certificate"></i></div><h3 id="benefit3Title">Professional Growth</h3><p id="benefit3Text">Gain unique field experience in resource-limited settings, plus a certificate of service.</p></div>
+        </div>
+
+        <!-- volunteer stats -->
+        <div class="stats-row">
+            <div class="stat-item"><div class="stat-number" data-count="87">0</div><div id="stat1Label">Medical volunteers joined</div></div>
+            <div class="stat-item"><div class="stat-number" data-count="24">0</div><div id="stat2Label">Surgical camps supported</div></div>
+            <div class="stat-item"><div class="stat-number" data-count="4200">0</div><div id="stat3Label">Patients reached</div></div>
+        </div>
+
+        <!-- application form -->
+        <div class="form-card" id="volunteer-form">
+            <h2 id="formTitle" style="color:var(--primary); margin-bottom:1.5rem;">Apply to Volunteer</h2>
+            <p id="formNote" style="margin-bottom:1.5rem;">Fill the form below. Our coordination team will contact you within 5 days. All information is sent directly to <strong>info@cavitrd.org</strong>.</p>
+            <form action="https://formsubmit.co/info@cavitrd.org" method="POST">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://www.cavitrd.org/thankyou.html">
+                <!-- honeypot optional -->
+                <div class="form-group"><label id="nameLabel">Full name *</label><input type="text" name="Full Name" required></div>
+                <div class="form-group"><label id="emailLabel">Email address *</label><input type="email" name="Email" required></div>
+                <div class="form-group"><label id="phoneLabel">Phone number *</label><input type="tel" name="Phone" required></div>
+                <div class="form-group"><label id="specialtyLabel">Medical specialization *</label><input type="text" name="Specialization" placeholder="e.g., Surgeon, Nurse, Physiotherapist, Optometrist" required></div>
+                <div class="form-group"><label id="availabilityLabel">Preferred availability (dates / duration)</label><input type="text" name="Availability" placeholder="e.g., July 2025, 2 weeks"></div>
+                <div class="form-group"><label id="messageLabel">Tell us why you’d like to volunteer *</label><textarea name="Message" rows="4" required></textarea></div>
+                <button type="submit" class="btn btn-primary" style="width:100%;" id="submitBtn"><i class="fas fa-paper-plane"></i> Submit application</button>
+            </form>
+            <p style="margin-top:1rem; font-size:0.8rem; color:var(--text-muted);" id="formFooter">We respect your privacy. Your data will only be used for volunteer coordination.</p>
+        </div>
+
+        <!-- additional info -->
+        <div style="background: #eef3f0; border-radius: 1.5rem; padding: 2rem; text-align: center; margin: 2rem 0;">
+            <i class="fas fa-question-circle" style="font-size: 2rem; color: var(--primary);"></i>
+            <h3 id="qaTitle">Questions before applying?</h3>
+            <p id="qaText">Email us at <strong>volunteer@cavitrd.org</strong> or call +255 718 851 139. We’re happy to discuss travel, accommodation, and how you can best contribute.</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div><h3>CAVITRD</h3><p id="footerAbout">Registered NGO (14NGO/R/4896) serving Lake Zone, Tanzania: surgical, eye care & disability support.</p><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a></div></div>
+            <div><h4 id="quickTitle">Quick Links</h4><div class="footer-links"><a href="index.html">🏠 Home</a><a href="about.html">📖 About</a><a href="projects.html">✨ What We Do</a><a href="volunteers.html">🤝 Volunteer</a></div></div>
+            <div><h4 id="contactFooterTitle">Contact</h4><div class="footer-links"><a><i class="fas fa-map-marker-alt"></i> <span id="contactAddr">Mwanza, Tanzania</span></a><a><i class="fas fa-phone-alt"></i> <span id="contactPhone">+255 718 851 139</span></a><a><i class="fas fa-envelope"></i> <span id="contactEmail">info@cavitrd.org</span></a><a><i class="fas fa-id-card"></i> <span id="contactReg">Reg: 14NGO/R/4896</span></a></div></div>
+            <div><h4 id="supportTitle">Join the mission</h4><p id="supportText">Your medical skills can create smiles. Apply today.</p><div style="margin-top:1rem;"><a href="volunteers.html" class="btn btn-primary" style="padding:0.6rem 1.2rem; font-size:0.8rem;">Volunteer now</a></div></div>
+        </div>
+        <div style="border-top:1px solid #2f5544; padding-top:1.5rem; text-align:center; font-size:0.8rem;" id="copyright">© 2026 CAVITRD — Compassion in action. All rights reserved.</div>
+    </div>
+</footer>
+<a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+<script>
+    // Translations (EN/SW)
+    const translations = {
+        en: {
+            heroTitle: "Join Our Medical Volunteer Team", heroText: "Your skills can restore smiles, mobility, and hope. CAVITRD welcomes doctors, nurses, therapists, and health professionals to serve communities in Tanzania's Lake Zone.", heroBtn: "Apply now",
+            benefit1Title: "Hands‑On Impact", benefit1Text: "Perform life-changing surgeries, lead vision camps, or train local health workers in remote communities.",
+            benefit2Title: "Cultural Immersion", benefit2Text: "Experience the warmth of Tanzanian communities while sharing your expertise in a meaningful way.",
+            benefit3Title: "Professional Growth", benefit3Text: "Gain unique field experience in resource-limited settings, plus a certificate of service.",
+            stat1Label: "Medical volunteers joined", stat2Label: "Surgical camps supported", stat3Label: "Patients reached",
+            formTitle: "Apply to Volunteer", formNote: "Fill the form below. Our coordination team will contact you within 5 days. All information is sent directly to info@cavitrd.org.",
+            nameLabel: "Full name *", emailLabel: "Email address *", phoneLabel: "Phone number *", specialtyLabel: "Medical specialization *", availabilityLabel: "Preferred availability (dates / duration)", messageLabel: "Tell us why you’d like to volunteer *", submitBtn: "Submit application", formFooter: "We respect your privacy. Your data will only be used for volunteer coordination.",
+            qaTitle: "Questions before applying?", qaText: "Email us at volunteer@cavitrd.org or call +255 718 851 139. We’re happy to discuss travel, accommodation, and how you can best contribute.",
+            quickTitle: "Quick Links", contactFooterTitle: "Contact", supportTitle: "Join the mission", supportText: "Your medical skills can create smiles. Apply today.",
+            contactAddr: "Mwanza, Tanzania", contactPhone: "+255 718 851 139", contactEmail: "info@cavitrd.org", contactReg: "Reg: 14NGO/R/4896",
+            footerAbout: "Registered NGO (14NGO/R/4896) serving Lake Zone, Tanzania: surgical, eye care & disability support.",
+            copyright: "© 2026 CAVITRD — Compassion in action. All rights reserved."
+        },
+        sw: {
+            heroTitle: "Jiunge na Timu Yetu ya Kujitolea ya Matibabu", heroText: "Ujuzi wako unaweza kurejesha tabasamu, uwezo wa kusonga, na matumaini. CAVITRD inakaribisha madaktari, wauguzi, wataalamu wa tiba, na wataalamu wa afya kuhudumia jamii katika eneo la Ziwa Tanzania.", heroBtn: "Omba sasa",
+            benefit1Title: "Athari ya Moja kwa Moja", benefit1Text: "Fanya upasuaji unaobadilisha maisha, ongoza kambi za macho, au fundisha wafanyakazi wa afya katika jamii za mbali.",
+            benefit2Title: "Uzamishe Katika Utamaduni", benefit2Text: "Pata uzoefu wa ukarimu wa jamii za Kitanzania huku ukishiriki utaalamu wako kwa njia yenye maana.",
+            benefit3Title: "Ukuaji wa Kitaalamu", benefit3Text: "Pata uzoefu wa kipekee wa uwanjani katika mazingira yenye rasilimali chache, pamoja na cheti cha huduma.",
+            stat1Label: "Wajitolea wa matibabu waliojiunga", stat2Label: "Kambi za upasuaji zilizoungwa mkono", stat3Label: "Wagonjwa waliofikia",
+            formTitle: "Omba Kujitolea", formNote: "Jaza fomu iliyo hapa chini. Timu yetu ya uratibu itawasiliana nawe ndani ya siku 5. Taarifa zote zinatumwa moja kwa moja kwa info@cavitrd.org.",
+            nameLabel: "Jina kamili *", emailLabel: "Barua pepe *", phoneLabel: "Nambari ya simu *", specialtyLabel: "Utaalamu wa kimatibabu *", availabilityLabel: "Upataji unaopendelewa (tarehe / muda)", messageLabel: "Tuambie kwa nini ungependa kujitolea *", submitBtn: "Tuma ombi", formFooter: "Tunaheshimu faragha yako. Data yako itatumika tu kwa uratibu wa wajitolea.",
+            qaTitle: "Maswali kabla ya kutuma ombi?", qaText: "Tutumie barua pepe volunteer@cavitrd.org au piga +255 718 851 139. Tunafurahi kujadili usafiri, makazi, na jinsi unavyoweza kuchangia vyema.",
+            quickTitle: "Viungo vya haraka", contactFooterTitle: "Wasiliana", supportTitle: "Jiunge na dhamira", supportText: "Ujuzi wako wa matibabu unaweza kuleta tabasamu. Omba leo.",
+            contactAddr: "Mwanza, Tanzania", contactPhone: "+255 718 851 139", contactEmail: "info@cavitrd.org", contactReg: "Usajili: 14NGO/R/4896",
+            footerAbout: "AS iliyosajiliwa (14NGO/R/4896) inayohudumu Mkoa wa Ziwa, Tanzania: upasuaji, macho na usaidizi wa ulemavu.",
+            copyright: "© 2026 CAVITRD — Huruma katika vitendo. Haki zote zimehifadhiwa."
+        }
+    };
+
+    function setLanguage(lang) {
+        const t = translations[lang];
+        document.getElementById('heroTitle').innerText = t.heroTitle;
+        document.getElementById('heroText').innerText = t.heroText;
+        document.getElementById('heroBtn').innerText = t.heroBtn;
+        document.getElementById('benefit1Title').innerText = t.benefit1Title;
+        document.getElementById('benefit1Text').innerText = t.benefit1Text;
+        document.getElementById('benefit2Title').innerText = t.benefit2Title;
+        document.getElementById('benefit2Text').innerText = t.benefit2Text;
+        document.getElementById('benefit3Title').innerText = t.benefit3Title;
+        document.getElementById('benefit3Text').innerText = t.benefit3Text;
+        document.getElementById('stat1Label').innerText = t.stat1Label;
+        document.getElementById('stat2Label').innerText = t.stat2Label;
+        document.getElementById('stat3Label').innerText = t.stat3Label;
+        document.getElementById('formTitle').innerText = t.formTitle;
+        document.getElementById('formNote').innerHTML = t.formNote;
+        document.getElementById('nameLabel').innerHTML = t.nameLabel;
+        document.getElementById('emailLabel').innerHTML = t.emailLabel;
+        document.getElementById('phoneLabel').innerHTML = t.phoneLabel;
+        document.getElementById('specialtyLabel').innerHTML = t.specialtyLabel;
+        document.getElementById('availabilityLabel').innerHTML = t.availabilityLabel;
+        document.getElementById('messageLabel').innerHTML = t.messageLabel;
+        document.getElementById('submitBtn').innerHTML = '<i class="fas fa-paper-plane"></i> ' + t.submitBtn;
+        document.getElementById('formFooter').innerText = t.formFooter;
+        document.getElementById('qaTitle').innerText = t.qaTitle;
+        document.getElementById('qaText').innerHTML = t.qaText;
+        document.getElementById('quickTitle').innerText = t.quickTitle;
+        document.getElementById('contactFooterTitle').innerText = t.contactFooterTitle;
+        document.getElementById('supportTitle').innerText = t.supportTitle;
+        document.getElementById('supportText').innerText = t.supportText;
+        document.getElementById('contactAddr').innerText = t.contactAddr;
+        document.getElementById('contactPhone').innerText = t.contactPhone;
+        document.getElementById('contactEmail').innerText = t.contactEmail;
+        document.getElementById('contactReg').innerText = t.contactReg;
+        document.getElementById('footerAbout').innerText = t.footerAbout;
+        document.getElementById('copyright').innerHTML = t.copyright;
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('active');
+    }
+
+    // counter animation
+    const counters = document.querySelectorAll('.stat-number');
+    let counted = false;
+    function startCounters() {
+        if(counted) return;
+        counters.forEach(el => {
+            const target = parseInt(el.getAttribute('data-count'), 10);
+            let current = 0;
+            const step = Math.ceil(target / 45);
+            const update = () => {
+                current += step;
+                if(current < target) { el.innerText = current; requestAnimationFrame(update); }
+                else el.innerText = target;
+            };
+            update();
+        });
+        counted = true;
+    }
+    const observerCount = new IntersectionObserver((entries) => {
+        if(entries[0].isIntersecting && !counted) startCounters();
+    }, { threshold: 0.3 });
+    const statsSection = document.querySelector('.stats-row');
+    if(statsSection) observerCount.observe(statsSection);
+
+    // navbar scroll & back to top
+    const navbar = document.getElementById('navbar');
+    const backBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 50) navbar.classList.add('scrolled');
+        else navbar.classList.remove('scrolled');
+        if(window.scrollY > 500) backBtn.classList.add('show');
+        else backBtn.classList.remove('show');
+    });
+    backBtn.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'}); });
+
+    // mobile menu
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+    mobileToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        mobileToggle.innerHTML = navMenu.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => { navMenu.classList.remove('active'); mobileToggle.innerHTML = '<i class="fas fa-bars"></i>'; });
+    });
+
+    // language switcher
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => setLanguage(e.currentTarget.getAttribute('data-lang')));
+    });
+    setLanguage('en');
+
+    // smooth anchor
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const hash = this.getAttribute('href');
+            if(hash === '#') return;
+            const target = document.querySelector(hash);
+            if(target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        });
+    });
+</script>
+</body>
+</html>
